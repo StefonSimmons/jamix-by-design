@@ -3,6 +3,8 @@ import Layout from "./layout/Layout";
 import About from "./screens/About";
 import Home from "./screens/Home";
 import Contact from "./screens/Contact"
+import Services from "./screens/Services"
+
 import "./styles/main.css"
 
 function App() {
@@ -16,6 +18,9 @@ function App() {
       </Route>
       <Route exact path="/contact">
         <Contact/>
+      </Route>
+      <Route exact path="/services">
+        <Services/>
       </Route>
     </Layout>
   );

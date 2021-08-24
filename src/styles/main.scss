@@ -2,7 +2,7 @@
 
 @import './variables';
 @import './layout/layout', './layout/header', './layout/footer';
-@import './screens/home', './screens/about', './screens/contact';
+@import './screens/home', './screens/about', './screens/contact', './screens/services';
 
 body{
   font-family: $primary-font;
