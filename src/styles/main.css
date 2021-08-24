@@ -152,6 +152,17 @@ footer {
   width: 100%;
 }
 
+.contact-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-screen img {
+  width: 56px;
+}
+
 body {
   font-family: "Reem Kufi", sans-serif;
 }
