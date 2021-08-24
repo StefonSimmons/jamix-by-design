@@ -73,6 +73,85 @@ footer {
   height: auto;
 }
 
+.about-screen {
+  padding: 0 120px;
+  height: 1500px;
+  position: relative;
+}
+
+.about-screen .about-floater {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  top: 6.25%;
+  box-sizing: border-box;
+  height: 83%;
+  width: 83%;
+  margin: 0;
+  z-index: 1;
+}
+
+.about-screen .about-floater .about-me {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.about-screen .about-floater .about-me img {
+  height: 545px;
+  border: 2px solid black;
+}
+
+.about-screen .about-floater .about-me p {
+  box-sizing: border-box;
+  width: 332px;
+  padding: 30px 15px;
+  font-size: 24px;
+  line-height: 40px;
+  background-color: white;
+  border: 2px black solid;
+}
+
+.about-screen .about-floater .about-jamix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 677px;
+}
+
+.about-screen .about-floater .about-jamix h1 {
+  font-size: 67px;
+}
+
+.about-screen .about-floater .about-jamix img {
+  height: 324px;
+  border: 2px solid black;
+}
+
+.about-screen .about-floater .about-jamix .about-jamix-p {
+  box-sizing: border-box;
+  border: 2px solid black;
+  height: 233px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.about-screen .about-floater .about-jamix .about-jamix-p p {
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.about-screen .about-gold-bg {
+  position: relative;
+  top: 25%;
+  background-color: rgba(225, 201, 151, 0.7);
+  height: 635px;
+  width: 100%;
+}
+
 body {
   font-family: "Reem Kufi", sans-serif;
 }

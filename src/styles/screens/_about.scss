@@ -1,0 +1,78 @@
+
+.about-screen{
+  padding: 0 120px;
+  height: 1500px;
+  position: relative;
+
+  .about-floater{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: (25%/4); //  a quarter of the background position
+    box-sizing: border-box;
+    height: 83%;
+    width: 83%; // (1196px/1440px)
+    margin: 0;
+    z-index: 1;
+
+    .about-me{
+      display: flex;
+      justify-content: space-evenly;
+
+      img{
+        height: 545px;
+        border: 2px solid black;
+      }
+      p{
+        box-sizing: border-box;
+        width: 332px;
+        padding: 30px 15px;
+        font-size: $m-font-size;
+        line-height: 40px;
+        background-color: white;
+        border: 2px black solid;
+      }
+    }
+
+    .about-jamix{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 677px;
+
+      h1{
+        font-size: $xxl-font-size;
+      }
+
+      img{
+        height: 324px;
+        border: 2px solid black;
+      }
+
+      .about-jamix-p{
+        box-sizing: border-box;
+        border: 2px solid black;
+        height: 233px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 30px;
+
+        p{
+          line-height: 32px;
+          font-size: $m-font-size;
+        }
+      }
+    }
+  }
+    
+  .about-gold-bg{
+    position: relative;
+    top: 25%;
+    background-color: $goldish;
+    height: 635px;
+    width: 100%;
+  }
+}
