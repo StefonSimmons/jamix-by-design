@@ -168,6 +168,7 @@ footer {
   flex-direction: column;
   align-items: center;
   border: green solid 2px;
+  width: 100%;
 }
 
 .services-screen h1 {
@@ -178,6 +179,10 @@ footer {
 .services-screen section {
   border: red solid 2px;
   width: 100%;
+  height: 1440px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .services-screen section .service-card-container {
@@ -186,7 +191,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
 }
 
 .services-screen section .service-card-container .service-card-color {
@@ -212,10 +216,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: rotate(13.73deg);
+  transform: rotate(10deg);
   box-sizing: border-box;
   height: 100%;
-  border: pink solid 2px;
 }
 
 .services-screen section .service-card-container .service-card-color .service-card .service-card-content h2 {
@@ -227,6 +230,18 @@ footer {
   font-size: 36px;
   list-style-type: disc;
   margin: 15px 0;
+}
+
+.plan {
+  grid-column: 1/3;
+}
+
+.design {
+  grid-column: 1/ 3;
+}
+
+.decorate {
+  grid-column: 1/3;
 }
 
 body {
