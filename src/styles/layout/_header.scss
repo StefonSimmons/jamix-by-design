@@ -3,7 +3,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  // border: green solid 2px;
+  border: 1px solid green;
 
   img{
     width: 258px;
@@ -12,9 +12,7 @@ header{
   nav{
     display: flex;
     justify-content: space-evenly;
-    font-family: $primary-font;
     font-size: $m-font-size;
-    // border: red solid 2px;
     width: 100%
   }
 }

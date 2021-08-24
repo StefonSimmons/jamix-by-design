@@ -2,7 +2,7 @@
 export default function Footer() {
   return (
     <footer>
-      <p>JAMix By Design © 2021. All rights reserved.</p>
+      <p>{`JAMix By Design © ${new Date().getFullYear()}. All rights reserved.`}</p>
     </footer>
   )
 }
