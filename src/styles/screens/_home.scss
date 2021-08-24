@@ -1,0 +1,35 @@
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 120px;
+  height: 1500px;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+    h1 {
+      font-size: $xxl-font-size;
+    }
+    .shifted-header-home{
+      margin-left: 9%;
+      margin-top: 30px;
+    }
+  }
+  button{
+    height: 90px;
+    width: 350px;
+    border-radius: 15px;
+    border: 2px black solid;
+    font-family: $primary-font;
+    font-size: $l-font-size;
+    background-color: $gold;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+}

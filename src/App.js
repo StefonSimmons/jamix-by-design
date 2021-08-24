@@ -1,10 +1,14 @@
+import { Route } from "react-router-dom";
 import Layout from "./layout/Layout";
+import Home from "./screens/Home";
 import "./styles/main.css"
 
 function App() {
   return (
     <Layout>
-      <h1>Hello</h1>
+      <Route exact path="/">
+        <Home />
+      </Route>
     </Layout>
   );
 }

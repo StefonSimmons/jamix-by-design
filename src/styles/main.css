@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
 .app-layout {
   min-height: 100vh;
+  width: 100vw;
   display: grid;
   grid-template-rows: 256px auto 45px;
   border: gold 2px solid;
@@ -11,7 +12,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid green;
 }
 
 header img {
@@ -31,7 +31,46 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  border: red solid 1px;
+}
+
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 120px;
+  height: 1500px;
+}
+
+.home-screen section {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.home-screen section h1 {
+  font-size: 67px;
+}
+
+.home-screen section .shifted-header-home {
+  margin-left: 9%;
+  margin-top: 30px;
+}
+
+.home-screen button {
+  height: 90px;
+  width: 350px;
+  border-radius: 15px;
+  border: 2px black solid;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 36px;
+  background-color: #E1C997;
+}
+
+.home-screen img {
+  width: 100%;
+  height: auto;
 }
 
 body {
