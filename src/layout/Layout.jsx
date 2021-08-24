@@ -1,18 +1,12 @@
-import jamixLogo from "../assets/jamix-logo.png"
+import Footer from "./Footer";
+import Header from "./Header";
 
-export default function Layout() {
+export default function Layout(props) {
   return (
-    <div>
-      <header>
-        <img src={jamixLogo} alt="jamix-logo" />
-        <nav>
-          <Link></Link>
-          <Link></Link>
-          <Link></Link>
-          <Link></Link>
-          <Link></Link>
-        </nav>
-      </header>
+    <div className="app-layout">
+      <Header />
+      {props.children}
+      <Footer/>
     </div>
   )
 }

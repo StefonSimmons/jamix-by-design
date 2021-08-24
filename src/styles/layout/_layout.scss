@@ -1,0 +1,6 @@
+.app-layout{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  border: gold 2px solid;
+}
