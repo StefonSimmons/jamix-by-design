@@ -167,8 +167,9 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: green solid 2px;
+  justify-content: space-between;
   width: 100%;
+  margin: 115px 0 75px 0;
 }
 
 .services-screen h1 {
@@ -176,16 +177,14 @@ footer {
   letter-spacing: 2.5px;
 }
 
-.services-screen section {
-  border: red solid 2px;
+.services-screen .services {
   width: 100%;
-  height: 1440px;
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(9, 1fr);
 }
 
-.services-screen section .service-card-container {
+.services-screen .services .service-card-container {
   width: 561px;
   height: 482px;
   display: flex;
@@ -193,7 +192,7 @@ footer {
   align-items: center;
 }
 
-.services-screen section .service-card-container .service-card-color {
+.services-screen .services .service-card-container .service-card-color {
   width: 461px;
   height: 301px;
   background-color: rgba(225, 201, 151, 0.7);
@@ -202,7 +201,7 @@ footer {
   transform: rotate(-23.6deg);
 }
 
-.services-screen section .service-card-container .service-card-color .service-card {
+.services-screen .services .service-card-container .service-card-color .service-card {
   width: 458px;
   height: 301px;
   box-sizing: border-box;
@@ -211,7 +210,7 @@ footer {
   transform: rotate(13.73deg);
 }
 
-.services-screen section .service-card-container .service-card-color .service-card .service-card-content {
+.services-screen .services .service-card-container .service-card-color .service-card .service-card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,27 +220,44 @@ footer {
   height: 100%;
 }
 
-.services-screen section .service-card-container .service-card-color .service-card .service-card-content h2 {
+.services-screen .services .service-card-container .service-card-color .service-card .service-card-content h2 {
   font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.services-screen section .service-card-container .service-card-color .service-card .service-card-content li {
+.services-screen .services .service-card-container .service-card-color .service-card .service-card-content li {
   font-size: 36px;
   list-style-type: disc;
   margin: 15px 0;
 }
 
+.services-screen .events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-screen .events li {
+  font-size: 24px;
+  line-height: 67px;
+  letter-spacing: 2px;
+}
+
 .plan {
-  grid-column: 1/3;
+  grid-column: 2/ span 3;
+  grid-row: 2/ span 3;
 }
 
 .design {
-  grid-column: 1/ 3;
+  grid-column: 9/ span 3;
+  grid-row: 3/span 3;
 }
 
 .decorate {
-  grid-column: 1/3;
+  grid-column: 5/ span 3;
+  grid-row: 6/ span 3;
 }
 
 body {

@@ -21,3 +21,16 @@ export const services = [
 
 
 
+
+export const events = [
+  "Engagement (Surprises)",
+  "Engagement parties",
+  "Bridal Shower",
+  "Weddings",
+  "Anniversaries",
+  "Baby Shower",
+  "Birthday Parties",
+  "Corporate Events",
+  "Non-profit Events",
+  "Private"
+]
