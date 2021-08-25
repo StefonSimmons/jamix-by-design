@@ -240,7 +240,7 @@ footer {
 }
 
 .services-screen .events li {
-  font-size: 24px;
+  font-size: 36px;
   line-height: 67px;
   letter-spacing: 2px;
 }
@@ -258,6 +258,20 @@ footer {
 .decorate {
   grid-column: 5/ span 3;
   grid-row: 6/ span 3;
+}
+
+.gallery-screen .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 115px 0 75px 0;
+}
+
+.gallery-screen .gallery .photo {
+  margin: 15px;
+  height: 468px;
+  width: 442px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {

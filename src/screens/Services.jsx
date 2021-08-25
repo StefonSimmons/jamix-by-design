@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import Service from "../components/Service"
-import { events, services } from "../service-data/services"
+import { events, services } from "../import-info/services"
 
 export default function Services() {
   return (

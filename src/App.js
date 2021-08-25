@@ -4,6 +4,7 @@ import About from "./screens/About";
 import Home from "./screens/Home";
 import Contact from "./screens/Contact"
 import Services from "./screens/Services"
+import Gallery from "./screens/Gallery"
 
 import "./styles/main.css"
 
@@ -21,6 +22,9 @@ function App() {
       </Route>
       <Route exact path="/services">
         <Services/>
+      </Route>
+      <Route exact path="/gallery">
+        <Gallery/>
       </Route>
     </Layout>
   );

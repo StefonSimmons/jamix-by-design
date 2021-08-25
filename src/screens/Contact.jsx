@@ -1,6 +1,6 @@
-import instagram from "../assets/instagram.svg"
-import facebook from "../assets/facebook.svg"
-import gmail from "../assets/gmail.svg"
+import instagram from "../assets/social-icons/instagram.svg"
+import facebook from "../assets/social-icons/facebook.svg"
+import gmail from "../assets/social-icons/gmail.svg"
 
 export default function Contact() {
   return (
