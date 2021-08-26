@@ -23,23 +23,6 @@
       margin-top: 30px;
     }
   }
-  button{
-    height: 90px;
-    width: 350px;
-    border-radius: 15px;
-    border: 2px black solid;
-    font-family: $primary-font;
-    font-size: $l-font-size;
-    color: black;
-    background: $gold;
-    transition: all .3s ease-in-out;
-    &:hover{
-      background-color: rgba(0, 0, 0,.8);
-      border: 2px rgba(0, 0, 0, 0) solid;
-      color: white;
-      box-shadow: 5px 5px 5px 0px black;
-    }
-  }
   img{
     width: 100%;
     height: auto;

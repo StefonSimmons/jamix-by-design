@@ -48,6 +48,26 @@
   background-color: rgba(255, 255, 0, 0.1);
 }
 
+.big-btn {
+  height: 90px;
+  width: 350px;
+  border-radius: 15px;
+  border: 2px black solid;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 36px;
+  color: black;
+  background: #E1C997;
+  transition: all .3s ease-in-out;
+}
+
+.big-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(225, 201, 151, 0.7);
+  border: 2px rgba(0, 0, 0, 0) solid;
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 5px 5px 0px black;
+}
+
 .app-layout {
   min-height: 100vh;
   width: 100vw;
@@ -137,25 +157,6 @@ footer {
 .home-screen section .shifted-header-home {
   margin-left: 9%;
   margin-top: 30px;
-}
-
-.home-screen button {
-  height: 90px;
-  width: 350px;
-  border-radius: 15px;
-  border: 2px black solid;
-  font-family: "Reem Kufi", sans-serif;
-  font-size: 36px;
-  color: black;
-  background: #E1C997;
-  transition: all .3s ease-in-out;
-}
-
-.home-screen button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 2px rgba(0, 0, 0, 0) solid;
-  color: white;
-  box-shadow: 5px 5px 5px 0px black;
 }
 
 .home-screen img {
@@ -307,14 +308,15 @@ footer {
   }
 }
 
-.services-screen .services {
+.services-screen .services-grid {
   width: 100%;
+  height: 1445px;
   display: grid;
   grid-template-columns: repeat(15, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: repeat(18, 1fr);
 }
 
-.services-screen .services .service-card-container {
+.services-screen .services-grid .service-card-container {
   width: 561px;
   height: 482px;
   display: flex;
@@ -322,7 +324,7 @@ footer {
   align-items: center;
 }
 
-.services-screen .services .service-card-container .service-card-color {
+.services-screen .services-grid .service-card-container .service-card-color {
   width: 461px;
   height: 301px;
   background-color: rgba(225, 201, 151, 0.7);
@@ -331,7 +333,7 @@ footer {
   transform: rotate(-23.6deg);
 }
 
-.services-screen .services .service-card-container .service-card-color .service-card {
+.services-screen .services-grid .service-card-container .service-card-color .service-card {
   width: 458px;
   height: 301px;
   box-sizing: border-box;
@@ -340,7 +342,7 @@ footer {
   transform: rotate(13.73deg);
 }
 
-.services-screen .services .service-card-container .service-card-color .service-card .service-card-content {
+.services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -350,14 +352,14 @@ footer {
   height: 100%;
 }
 
-.services-screen .services .service-card-container .service-card-color .service-card .service-card-content h2 {
+.services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content h2 {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 2px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.services-screen .services .service-card-container .service-card-color .service-card .service-card-content li {
+.services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content li {
   font-size: 24px;
   list-style-type: disc;
   margin: 15px 0;
@@ -367,6 +369,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
+  margin: 150px 0;
 }
 
 .services-screen .events li {
@@ -382,12 +386,12 @@ footer {
 
 .design {
   grid-column: 9/ span 3;
-  grid-row: 3/span 3;
+  grid-row: 5/span 3;
 }
 
 .decorate {
   grid-column: 5/ span 3;
-  grid-row: 6/ span 3;
+  grid-row: 11/ span 3;
 }
 
 .gallery-screen {

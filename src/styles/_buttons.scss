@@ -1,0 +1,18 @@
+.big-btn{
+  height: 90px;
+  width: 350px;
+  border-radius: 15px;
+  border: 2px black solid;
+  font-family: $primary-font;
+  font-size: $l-font-size;
+  color: black;
+  background: $gold;
+  transition: all .3s ease-in-out;
+  &:hover{
+    background-color: rgba(0, 0, 0,.8);
+    background-color: $goldish;
+    border: 2px rgba(0, 0, 0, 0) solid;
+    color: rgba(0, 0, 0, 0.9);
+    box-shadow: 5px 5px 5px 0px black;
+  }
+}
