@@ -13,6 +13,7 @@ import "./styles/main.css"
 function App() {
 
   const [index, setIndex] = useState(0);
+  const [galleryModal, setGalleryModal] = useState(false)
 
   return (
     <Layout>
@@ -20,18 +21,23 @@ function App() {
         <Home />
       </Route>
       <Route exact path="/about">
-        <About/>
+        <About />
       </Route>
       <Route exact path="/contact">
-        <Contact/>
+        <Contact />
       </Route>
       <Route exact path="/services">
-        <Services/>
+        <Services />
       </Route>
       <Route exact path="/gallery">
-        <Gallery setIndex={setIndex}/>
+        <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} />
       </Route>
-      <GalleryCarousel setIndex={setIndex} index={index}/>
+      <GalleryCarousel
+        setIndex={setIndex}
+        index={index}
+        setGalleryModal={setGalleryModal}
+        galleryModal={galleryModal}
+      />
     </Layout>
   );
 }

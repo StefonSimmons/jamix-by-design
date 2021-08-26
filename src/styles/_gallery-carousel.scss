@@ -8,6 +8,20 @@
   flex-direction: column;
   justify-content: center;
 
+  .close{
+    font-size: $l-font-size;
+    font-weight: 400;
+    position: relative;
+    left: 72%;
+    color: black;
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+    
+    &:hover{
+      color: $gold;
+    }
+  }
+
   img{
     height: 468px;
     width: auto;

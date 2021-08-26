@@ -10,6 +10,20 @@
   justify-content: center;
 }
 
+.gallery-carousel .close {
+  font-size: 36px;
+  font-weight: 400;
+  position: relative;
+  left: 72%;
+  color: black;
+  cursor: pointer;
+  transition: color .15s ease-in-out;
+}
+
+.gallery-carousel .close:hover {
+  color: #E1C997;
+}
+
 .gallery-carousel img {
   height: 468px;
   width: auto;
