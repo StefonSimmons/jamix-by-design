@@ -1,6 +1,6 @@
 import { gallery } from '../import-info/gallery'
 
-export default function Gallery() {
+export default function Gallery({ setIndex }) {
   return (
     <div className="gallery-screen">
       <section className="gallery">
@@ -8,7 +8,7 @@ export default function Gallery() {
           <div
             key={idx}
             className="photo"
-            // onClick={}
+            onClick={() => setIndex(idx)}
             style={{ backgroundImage: `url(${photo})` }}
           >
           </div>

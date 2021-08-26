@@ -1,10 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
+.gallery-carousel {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery-carousel img {
+  height: 468px;
+  width: auto;
+  margin: 0 auto;
+}
+
 .app-layout {
   min-height: 100vh;
   width: 100vw;
   display: grid;
   grid-template-rows: 256px auto 60px;
-  border: gold 2px solid;
 }
 
 header {
@@ -263,6 +279,7 @@ footer {
 .gallery-screen .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 115px 0 75px 0;
 }
 

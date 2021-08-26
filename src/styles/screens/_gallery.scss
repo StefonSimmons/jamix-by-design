@@ -3,6 +3,7 @@
   .gallery {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 115px 0 75px 0;
 
     .photo {
@@ -15,3 +16,5 @@
     }
   }
 }
+
+
