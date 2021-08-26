@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
 .gallery-carousel {
+  animation: fade-in .5s ease-in-out;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   position: fixed;
@@ -10,12 +11,21 @@
   justify-content: center;
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .gallery-carousel .close {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 400;
   position: relative;
   left: 72%;
-  color: black;
+  color: #1f0b0b;
   cursor: pointer;
   transition: color .15s ease-in-out;
 }
@@ -28,6 +38,14 @@
   height: 468px;
   width: auto;
   margin: 0 auto;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  transition: all .25s ease-in;
+}
+
+.carousel-control-next:hover, .carousel-control-prev:hover {
+  background-color: rgba(255, 255, 0, 0.1);
 }
 
 .app-layout {
@@ -76,12 +94,22 @@ footer {
 }
 
 .home-screen {
+  animation: fade-in .5s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   padding: 0 120px;
   height: 1500px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .home-screen section {
@@ -125,9 +153,19 @@ footer {
 }
 
 .about-screen {
+  animation: fade-in .5s ease-in-out;
   padding: 0 120px;
   height: 1500px;
   position: relative;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .about-screen .about-floater {
@@ -204,10 +242,20 @@ footer {
 }
 
 .contact-screen {
+  animation: fade-in .5s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .contact-screen img {
@@ -215,12 +263,22 @@ footer {
 }
 
 .services-screen {
+  animation: fade-in .5s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   margin: 115px 0 75px 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .services-screen h1 {
@@ -309,6 +367,19 @@ footer {
 .decorate {
   grid-column: 5/ span 3;
   grid-row: 6/ span 3;
+}
+
+.gallery-screen {
+  animation: fade-in .5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .gallery-screen .gallery {

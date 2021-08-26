@@ -1,4 +1,5 @@
 .services-screen {
+  @include fade-in-animation;
   display: flex;
   flex-direction: column;
   align-items: center;

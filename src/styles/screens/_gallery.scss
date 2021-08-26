@@ -1,5 +1,5 @@
 .gallery-screen {
-
+  @include fade-in-animation;
   .gallery {
     display: flex;
     flex-wrap: wrap;

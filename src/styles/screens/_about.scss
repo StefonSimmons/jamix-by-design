@@ -1,5 +1,6 @@
 
 .about-screen{
+  @include fade-in-animation;
   padding: 0 120px;
   height: 1500px;
   position: relative;

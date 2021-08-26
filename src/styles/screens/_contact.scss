@@ -1,4 +1,5 @@
 .contact-screen{
+  @include fade-in-animation;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
