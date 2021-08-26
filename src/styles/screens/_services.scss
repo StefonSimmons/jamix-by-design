@@ -8,6 +8,7 @@
   margin: 115px 0 75px 0;
 
   h1 {
+    @include fade-in-animation(2s);
     font-size: $xxl-font-size;
     letter-spacing: 2.5px;
   }

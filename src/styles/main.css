@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
 .gallery-carousel {
-  animation: fade-in .5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   position: fixed;
@@ -91,10 +91,11 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  letter-spacing: 1.75px;
 }
 
 .home-screen {
-  animation: fade-in .5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,7 +121,17 @@ footer {
 }
 
 .home-screen section h1 {
+  animation: fade-in 2s ease-in-out;
   font-size: 67px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .home-screen section .shifted-header-home {
@@ -153,7 +164,7 @@ footer {
 }
 
 .about-screen {
-  animation: fade-in .5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
   padding: 0 120px;
   height: 1500px;
   position: relative;
@@ -242,7 +253,7 @@ footer {
 }
 
 .contact-screen {
-  animation: fade-in .5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -263,7 +274,7 @@ footer {
 }
 
 .services-screen {
-  animation: fade-in .5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -282,8 +293,18 @@ footer {
 }
 
 .services-screen h1 {
+  animation: fade-in 2s ease-in-out;
   font-size: 67px;
   letter-spacing: 2.5px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .services-screen .services {
@@ -370,7 +391,7 @@ footer {
 }
 
 .gallery-screen {
-  animation: fade-in .5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out;
 }
 
 @keyframes fade-in {

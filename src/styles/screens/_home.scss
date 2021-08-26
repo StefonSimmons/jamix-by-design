@@ -15,6 +15,7 @@
     align-self: flex-start;
     width: 100%;
     h1 {
+      @include fade-in-animation(2s);
       font-size: $xxl-font-size;
     }
     .shifted-header-home{
