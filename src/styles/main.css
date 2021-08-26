@@ -204,6 +204,7 @@ footer {
 }
 
 .about-screen .about-floater .about-me p {
+  height: 545px;
   box-sizing: border-box;
   width: 332px;
   padding: 30px 15px;
@@ -211,6 +212,7 @@ footer {
   line-height: 40px;
   background-color: white;
   border: 2px black solid;
+  word-spacing: 10px;
 }
 
 .about-screen .about-floater .about-jamix {
@@ -222,17 +224,26 @@ footer {
 }
 
 .about-screen .about-floater .about-jamix h1 {
-  font-size: 67px;
+  animation: fade-in 2s ease-in-out;
+  font-size: 52px;
+  letter-spacing: 2.5px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .about-screen .about-floater .about-jamix img {
   height: 324px;
-  border: 2px solid black;
 }
 
-.about-screen .about-floater .about-jamix .about-jamix-p {
+.about-screen .about-floater .about-jamix .about-jamix-ps {
   box-sizing: border-box;
-  border: 2px solid black;
   height: 233px;
   display: flex;
   flex-direction: column;
@@ -240,17 +251,34 @@ footer {
   padding: 15px 30px;
 }
 
-.about-screen .about-floater .about-jamix .about-jamix-p p {
-  line-height: 32px;
+.about-screen .about-floater .about-jamix .about-jamix-ps p {
+  line-height: 40px;
   font-size: 24px;
+  word-spacing: 10px;
 }
 
 .about-screen .about-gold-bg {
+  animation: fade-in 2s ease-in-out;
   position: relative;
   top: 25%;
   background-color: rgba(225, 201, 151, 0.7);
   height: 635px;
   width: 100%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.corp {
+  font-weight: 900;
+  color: #E1C997;
+  font-style: italic;
 }
 
 .contact-screen {

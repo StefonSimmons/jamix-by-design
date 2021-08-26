@@ -26,6 +26,7 @@
         border: 2px solid black;
       }
       p{
+        height: 545px;
         box-sizing: border-box;
         width: 332px;
         padding: 30px 15px;
@@ -33,6 +34,8 @@
         line-height: 40px;
         background-color: white;
         border: 2px black solid;
+        word-spacing: 10px;
+
       }
     }
 
@@ -44,17 +47,17 @@
       height: 677px;
 
       h1{
-        font-size: $xxl-font-size;
+        @include fade-in-animation(2s);
+        font-size: $xl-font-size;
+        letter-spacing: 2.5px;
       }
 
       img{
         height: 324px;
-        border: 2px solid black;
       }
 
-      .about-jamix-p{
+      .about-jamix-ps{
         box-sizing: border-box;
-        border: 2px solid black;
         height: 233px;
         display: flex;
         flex-direction: column;
@@ -62,18 +65,26 @@
         padding: 15px 30px;
 
         p{
-          line-height: 32px;
+          line-height: 40px;
           font-size: $m-font-size;
+          word-spacing: 10px;
         }
       }
     }
   }
     
   .about-gold-bg{
+    @include fade-in-animation(2s);
     position: relative;
     top: 25%;
     background-color: $goldish;
     height: 635px;
     width: 100%;
   }
+}
+
+.corp{
+  font-weight: 900;
+  color: $gold;
+  font-style: italic
 }
