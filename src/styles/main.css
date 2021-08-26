@@ -56,6 +56,18 @@ header nav {
   width: 100%;
 }
 
+header nav a {
+  transition: all .15s ease-in-out;
+}
+
+header nav a:visited {
+  outline: solid 1px white;
+}
+
+header nav a:hover {
+  color: #E1C997;
+}
+
 footer {
   display: flex;
   align-items: center;
@@ -95,7 +107,16 @@ footer {
   border: 2px black solid;
   font-family: "Reem Kufi", sans-serif;
   font-size: 36px;
-  background-color: #E1C997;
+  color: black;
+  background: #E1C997;
+  transition: all .3s ease-in-out;
+}
+
+.home-screen button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px rgba(0, 0, 0, 0) solid;
+  color: white;
+  box-shadow: 5px 5px 5px 0px black;
 }
 
 .home-screen img {

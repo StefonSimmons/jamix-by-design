@@ -1,3 +1,5 @@
+// @import "../../assets/about-joyce.jpg";
+
 .home-screen {
   display: flex;
   flex-direction: column;
@@ -26,7 +28,15 @@
     border: 2px black solid;
     font-family: $primary-font;
     font-size: $l-font-size;
-    background-color: $gold;
+    color: black;
+    background: $gold;
+    transition: all .3s ease-in-out;
+    &:hover{
+      background-color: rgba(0, 0, 0,.8);
+      border: 2px rgba(0, 0, 0, 0) solid;
+      color: white;
+      box-shadow: 5px 5px 5px 0px black;
+    }
   }
   img{
     width: 100%;
