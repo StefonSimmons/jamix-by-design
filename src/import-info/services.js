@@ -32,5 +32,5 @@ export const events = [
   "Birthday Parties",
   "Corporate Events",
   "Non-profit Events",
-  "Private"
+  "Private Events"
 ]
