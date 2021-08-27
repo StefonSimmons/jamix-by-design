@@ -13,7 +13,7 @@ export default function About() {
           <h1>About JAMix</h1>
           <img src={floral} alt="floral arrangement" />
           <div className="about-jamix-ps">
-            <p><span className="corp">JAMix By Design</span> is an event planning, designing and decorating team dedicated to bringing your vision and desires to life. Like the founder, the team works tirelessly to make each day as special as it can be. We take on each event like our very own. Beginning with the first planning meeting, we make your vision our mission.  We strive to capture it all and not miss a beat!</p>
+            <p><span className="corp">JAMix By Design</span> is an event planning, designing and decorating team dedicated to bringing your vision and desires to life. Like the founder, the team works tirelessly to make each day as special as it can be. We take on each event like our very own. Beginning with the first planning meeting, we make your vision our mission. We strive to capture it all without missing a beat!</p>
             <p>The Mix in JAMix represents the array of clients, services, designs, cultures, and atmosphere we aim to bring and serve. Are you thinking of something unique and not cookie cutter? Give us a call today!</p>
           </div>
         </section>
