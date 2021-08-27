@@ -1,4 +1,5 @@
-import joyce from "../assets/about-joyce.jpg"
+// import joyce from "../assets/about-joyce.jpg"
+import joyce2 from "../assets/about-joyce2.png"
 import floral from "../assets/about-floral.png"
 
 export default function About() {
@@ -6,7 +7,7 @@ export default function About() {
     <div className="about-screen">
       <main className="about-floater">
         <section className="about-me">
-          <img src={joyce} alt="joyce" />
+          <img src={joyce2} alt="joyce" />
           <p>Joyce is the Founder and CEO of <span className="corp">JAMix By Design</span>.  Her love and passion for event planning and decorating developed out of her own process in curating family events. She is very detail oriented and will spend every second to make sure your day is stress free.</p>
         </section>
         <section className="about-jamix">
