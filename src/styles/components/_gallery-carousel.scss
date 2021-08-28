@@ -17,10 +17,14 @@
     color: black;
     cursor: pointer;
     transition: color .15s ease-in-out;
+    @media(max-width: $xs-screen){
+      left: 85%;
+    }
 
     &:hover{
       color: $gold;
     }
+    
   }
 
   img{

@@ -30,6 +30,12 @@
   transition: color .15s ease-in-out;
 }
 
+@media (max-width: 412px) {
+  .gallery-carousel .close {
+    left: 85%;
+  }
+}
+
 .gallery-carousel .close:hover {
   color: #E1C997;
 }
