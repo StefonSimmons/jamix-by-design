@@ -92,16 +92,22 @@
   transition: all .25s;
 }
 
-.hamburger-menu-toggler:not(.collapsed) .hamburger-menu-bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px) translateX(6px);
+.menu-modal {
+  animation: fade-in 0.5s ease-in-out;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  border: purple solid 2px;
 }
 
-.hamburger-menu-toggler:not(.collapsed) .hamburger-menu-bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-menu-toggler:not(.collapsed) .hamburger-menu-bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px) translateX(6px);
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .app-layout {

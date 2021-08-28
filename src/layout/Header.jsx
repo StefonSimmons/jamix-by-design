@@ -2,9 +2,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import jamixLogo from "../assets/jamix-logo.png"
 
-export default function Header() {
+export default function Header({setMenuModal}) {
 
-  const [mobileMenu, setMobileMenu] = useState(false)
 
   return (
     <header>
@@ -19,8 +18,8 @@ export default function Header() {
       </nav>
       {/* Mobile Menu */}
       <div
-        class={`hamburger-menu-toggler ${!mobileMenu && "collapsed"}`}
-        onClick={() => setMobileMenu(true)}
+        class="hamburger-menu-toggler"
+        onClick={() => setMenuModal(true)}
       >
         <div class="hamburger-menu-bar"></div>
         <div class="hamburger-menu-bar"></div>
