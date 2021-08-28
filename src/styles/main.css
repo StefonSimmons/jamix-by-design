@@ -36,8 +36,21 @@
 
 .gallery-carousel img {
   height: 468px;
-  width: auto;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .gallery-carousel img {
+    height: 351px;
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-carousel img {
+    height: 234px;
+    max-width: 350px;
+  }
 }
 
 .carousel-control-next, .carousel-control-prev {
@@ -704,6 +717,13 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .gallery-screen .gallery .photo {
+    max-width: 340px;
+    margin: 15px 0;
+  }
 }
 
 body {
