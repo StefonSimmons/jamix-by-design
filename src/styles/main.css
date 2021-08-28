@@ -350,6 +350,7 @@ footer {
     height: auto;
     position: relative;
     top: initial;
+    z-index: 0;
   }
 }
 
@@ -367,6 +368,12 @@ footer {
   }
 }
 
+@media (max-width: 365px) {
+  .about-screen .about-floater .about-me {
+    height: 1000px;
+  }
+}
+
 .about-screen .about-floater .about-me img {
   height: 545px;
   border: 2px solid black;
@@ -376,6 +383,13 @@ footer {
   .about-screen .about-floater .about-me img {
     width: 410px;
     border: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-screen .about-floater .about-me img {
+    width: 350px;
+    height: 485px;
   }
 }
 
@@ -397,6 +411,18 @@ footer {
     width: 100%;
     height: auto;
     padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-screen .about-floater .about-me p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 365px) {
+  .about-screen .about-floater .about-me p {
+    padding: 15px;
   }
 }
 
@@ -429,8 +455,21 @@ footer {
   }
 }
 
+@media (max-width: 576px) {
+  .about-screen .about-floater .about-jamix h1 {
+    font-size: 36px;
+  }
+}
+
 .about-screen .about-floater .about-jamix img {
   height: 324px;
+}
+
+@media (max-width: 576px) {
+  .about-screen .about-floater .about-jamix img {
+    width: 350px;
+    height: 246px;
+  }
 }
 
 .about-screen .about-floater .about-jamix .about-jamix-ps {
@@ -448,10 +487,22 @@ footer {
   }
 }
 
+@media (max-width: 365px) {
+  .about-screen .about-floater .about-jamix .about-jamix-ps {
+    padding: 15px;
+  }
+}
+
 .about-screen .about-floater .about-jamix .about-jamix-ps p {
   line-height: 40px;
   font-size: 24px;
   word-spacing: 10px;
+}
+
+@media (max-width: 576px) {
+  .about-screen .about-floater .about-jamix .about-jamix-ps p {
+    font-size: 18px;
+  }
 }
 
 .about-screen .about-gold-bg {

@@ -6,7 +6,7 @@ footer{
   letter-spacing: 1.75px;
 
   @media (max-width: 576px) {
-    font-size: 18px;
+    font-size: $s-font-size;
     letter-spacing: 1px;
   }
 }

@@ -25,7 +25,8 @@
       width: 100%;
       height: auto;
       position: relative;
-      top: initial
+      top: initial;
+      z-index: 0;
     }
 
     .about-me{
@@ -38,6 +39,9 @@
         justify-content: space-evenly;
         height: 1106px;
       }
+      @media(max-width: $xs-screen){
+        height: 1000px;
+      }
 
       img{
         height: 545px;
@@ -45,6 +49,10 @@
         @media(max-width: $l-screen){
           width: 410px;
           border: none;
+        }
+        @media(max-width: $s-screen){
+          width: 350px;
+          height: 485px;
         }
       }
       p{
@@ -63,6 +71,12 @@
           height: auto;
           padding: 30px;
         }
+        @media(max-width: $s-screen){
+          font-size: $s-font-size;
+        }
+        @media(max-width: $xs-screen){
+          padding: 15px;
+        }
       }
     }
 
@@ -79,10 +93,17 @@
         @include fade-in-animation(2s);
         font-size: $xl-font-size;
         letter-spacing: 2.5px;
+        @media(max-width: $s-screen){
+          font-size: $l-font-size;
+        }
       }
 
       img{
         height: 324px;
+        @media(max-width: $s-screen){
+          width: 350px;
+          height: 246px;
+        }
       }
 
       .about-jamix-ps{
@@ -95,12 +116,19 @@
         @media(max-width: $l-screen){
           height: auto;
         }
+        @media(max-width: $xs-screen){
+          padding: 15px;
+        }
 
         p{
           line-height: 40px;
           font-size: $m-font-size;
           word-spacing: 10px;
+          @media(max-width: $s-screen){
+            font-size: $s-font-size;
+          }
         }
+        
       }
     }
   }
