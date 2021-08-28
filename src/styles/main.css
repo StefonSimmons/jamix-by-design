@@ -138,6 +138,12 @@
   grid-template-rows: 256px auto 60px;
 }
 
+@media (max-width: 576px) {
+  .app-layout {
+    grid-template-rows: 128px auto 60px;
+  }
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -148,7 +154,13 @@ header {
 @media (max-width: 768px) {
   header {
     flex-direction: row;
-    justify-content: space-around;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    justify-content: space-between;
+    margin: 0 45px 0 5px;
   }
 }
 
@@ -178,7 +190,7 @@ header nav {
 }
 
 header nav a {
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 header nav a:visited {

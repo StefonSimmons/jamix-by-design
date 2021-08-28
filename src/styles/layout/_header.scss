@@ -1,35 +1,38 @@
-header{
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  @media(max-width: 768px){
+  @media (max-width: 768px) {
     flex-direction: row;
-    justify-content: space-around;
+  }
+  @media (max-width: 576px) {
+    justify-content: space-between;
+    margin: 0 45px 0 5px; 
   }
 
-  img{
+  img {
     width: 258px;
     height: 168px;
-    @media(max-width: 768px){
+    @media (max-width: 768px) {
       width: 174px;
       height: 117px;
     }
   }
-  nav{
+  nav {
     display: flex;
     justify-content: space-evenly;
     font-size: $m-font-size;
     width: 100%;
-    @media(max-width: 768px){
+    @media (max-width: 768px) {
       display: none;
     }
-    a{
-      transition: all .15s ease-in-out;
-      &:visited{
+    a {
+      transition: all 0.15s ease-in-out;
+      &:visited {
         outline: solid 1px white;
       }
-      &:hover{
+      &:hover {
         color: $gold;
       }
     }

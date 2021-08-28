@@ -37,6 +37,7 @@ function App() {
       <Route exact path="/gallery">
         <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} />
       </Route>
+      
       {/* Non-routes */}
       <GalleryCarousel
         setIndex={setIndex}

@@ -3,4 +3,8 @@
   width: 100vw;
   display: grid;
   grid-template-rows: 256px auto 60px;
+
+  @media(max-width: 576px){
+    grid-template-rows: 128px auto 60px;
+  }
 }
