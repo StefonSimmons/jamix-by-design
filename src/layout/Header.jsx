@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import jamixLogo from "../assets/jamix-logo.png"
 
@@ -18,12 +17,12 @@ export default function Header({setMenuModal}) {
       </nav>
       {/* Mobile Menu */}
       <div
-        class="hamburger-menu-toggler"
+        className="hamburger-menu-toggler"
         onClick={() => setMenuModal(true)}
       >
-        <div class="hamburger-menu-bar"></div>
-        <div class="hamburger-menu-bar"></div>
-        <div class="hamburger-menu-bar"></div>
+        <div className="hamburger-menu-bar"></div>
+        <div className="hamburger-menu-bar"></div>
+        <div className="hamburger-menu-bar"></div>
       </div>
     </header>
   )
