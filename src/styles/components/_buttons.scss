@@ -19,4 +19,7 @@
   @media(max-width: 576px){
     font-size: $l-font-size;
   }
+  @media (max-width: 365px) {
+    border-radius: 0px;
+  }
 }

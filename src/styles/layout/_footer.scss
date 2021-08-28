@@ -4,4 +4,9 @@ footer{
   justify-content: center;
   font-size: $m-font-size;
   letter-spacing: 1.75px;
+
+  @media (max-width: 576px) {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
 }
