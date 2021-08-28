@@ -6,11 +6,21 @@
   justify-content: space-between;
   width: 100%;
   margin: 115px 0 75px 0;
+  @media(max-width: $xl-screen){
+    justify-content: center;
+  }
 
   h1 {
     @include fade-in-animation(2s);
     font-size: $xxl-font-size;
     letter-spacing: 2.5px;
+    @media (max-width: $xl-screen) {
+      font-size: $xl-font-size;
+    }
+    @media (max-width: $l-screen) {
+      font-size: $l-font-size;
+      text-align: center;
+    }
   }
   .services-grid {
     width: 100%;
@@ -18,7 +28,15 @@
     margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(30, 1fr);
-    grid-template-rows: repeat(36, 1fr); 
+    grid-template-rows: repeat(36, 1fr);
+
+    @media (max-width: $xl-screen) {
+      height: auto;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      margin: 80px 0;
+    }
 
     // NESTED STYLES APPLIED TO EACH CARD
     .service-card-container {
@@ -28,6 +46,15 @@
       justify-content: center;
       align-items: center;
 
+      @media (max-width: $m-screen) {
+        width: 350px;
+        height: 270px;
+      }
+      @media (max-width: $xs-screen) {
+        width: 100%;
+        height: 270px;
+      }
+
       .service-card-color {
         width: 461px;
         height: 301px;
@@ -36,6 +63,18 @@
         box-sizing: border-box;
         transform: rotate(-23.6deg);
 
+        @media (max-width: $m-screen) {
+          width: 250px;
+          height: 190px;
+        }
+        @media (max-width: $xs-screen) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 300px;
+          height: 215px;
+          transform: rotate(0deg);
+        }
         .service-card {
           width: 458px;
           height: 301px;
@@ -44,6 +83,15 @@
           border: black solid 2px;
           transform: rotate(13.73deg);
 
+          @media (max-width: $m-screen) {
+            width: 248px;
+            height: 188px;
+          }
+          @media (max-width: $xs-screen) {
+            width: 270px;
+            height: 190px;
+            transform: rotate(0deg);
+          }
           .service-card-content {
             display: flex;
             flex-direction: column;
@@ -52,16 +100,30 @@
             transform: rotate(10deg);
             box-sizing: border-box;
             height: 100%;
+            @media (max-width: $xs-screen) {
+              transform: rotate(0deg);
+            }
             h2 {
               font-size: $xl-font-size;
               font-weight: 700;
               letter-spacing: 2px;
               text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+              @media (max-width: $m-screen) {
+                font-size: $l-font-size;
+              }
             }
-            li {
-              font-size: $m-font-size;
-              list-style-type: disc;
-              margin: 15px 0;
+            ul{
+              margin: 0;
+
+              li {
+                font-size: $m-font-size;
+                list-style-type: disc;
+                margin: 15px 0;
+                @media (max-width: $m-screen) {
+                  font-size: $s-font-size;
+                  margin: 8px 0 0 0;
+                }
+              }
             }
           }
         }
@@ -69,31 +131,38 @@
     }
   }
 
-  .events{
+  .events {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
     margin: 150px 0;
-    li{
+    @media(max-width: $xl-screen){
+      margin: 75px 0;
+    }
+    li {
       font-size: $l-font-size;
       line-height: 67px;
       letter-spacing: 2px;
+      @media(max-width: $m-screen){
+        font-size: $m-font-size;
+      }
+      
     }
   }
 }
 
-.plan{
-  grid-column: 2/ span 3;
-  grid-row: 2/ span 3;
+.plan {
+  grid-column: 2 / span 3;
+  grid-row: 2 / span 3;
 }
 
-.design{
-  grid-column: 17/ span 3;
-  grid-row: 5/span 3;
+.design {
+  grid-column: 17 / span 3;
+  grid-row: 5 / span 3;
 }
 
-.decorate{
-  grid-column: 7/ span 3;
-  grid-row: 18/ span 3;
+.decorate {
+  grid-column: 7 / span 3;
+  grid-row: 18 / span 3;
 }
