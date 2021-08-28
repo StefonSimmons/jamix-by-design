@@ -1,4 +1,3 @@
-// @import "../../assets/about-joyce.jpg";
 
 .home-screen {
   @include fade-in-animation;
@@ -8,23 +7,45 @@
   justify-content: space-evenly;
   padding: 0 120px;
   height: 1500px;
+  @media(max-width: 992px){
+    padding: 0 60px;
+  }
+  @media(max-width: 576px){
+    padding: 0px;
+    height: 750px;
+  }
 
   section {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
     width: 100%;
+    @media(max-width: 992px){
+      align-items: center;
+    }
+  
     h1 {
       @include fade-in-animation(2s);
       font-size: $xxl-font-size;
+      @media(max-width: 768px){
+        font-size: $xl-font-size;
+      }
+      @media(max-width: 576px){
+        font-size: $l-font-size;
+      }
     }
     .shifted-header-home{
       margin-left: 9%;
       margin-top: 30px;
+
+      @media(max-width: 992px){
+        margin: 0;
+      }
+    
     }
   }
   img{
     width: 100%;
     height: auto;
+    
   }
 }
