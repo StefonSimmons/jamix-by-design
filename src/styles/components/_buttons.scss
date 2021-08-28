@@ -16,10 +16,10 @@
     box-shadow: 5px 5px 5px 0px black;
   }
 
-  @media(max-width: 576px){
+  @media(max-width: $s-screen){
     font-size: $l-font-size;
   }
-  @media (max-width: 365px) {
+  @media (max-width: $xs-screen) {
     border-radius: 0px;
   }
 }
