@@ -4,7 +4,7 @@
   display: grid;
   grid-template-rows: 256px auto 60px;
 
-  @media(max-width: 576px){
+  @media(max-width: $s-screen){
     grid-template-rows: 128px auto 60px;
   }
 }

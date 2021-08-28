@@ -4,6 +4,10 @@
   padding: 0 120px;
   height: 1500px;
   position: relative;
+  @media(max-width: $l-screen){
+    padding: 0;
+    height: auto;
+  }
 
   .about-floater{
     display: flex;
@@ -17,13 +21,31 @@
     margin: 0;
     z-index: 1;
 
+    @media(max-width: $l-screen){
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: initial
+    }
+
     .about-me{
       display: flex;
       justify-content: space-evenly;
 
+      @media(max-width: $l-screen){
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 1106px;
+      }
+
       img{
         height: 545px;
         border: 2px solid black;
+        @media(max-width: $l-screen){
+          width: 410px;
+          border: none;
+        }
       }
       p{
         height: 545px;
@@ -35,7 +57,12 @@
         background-color: white;
         border: 2px black solid;
         word-spacing: 10px;
-
+        @media(max-width: $l-screen){
+          border: none;
+          width: 100%;
+          height: auto;
+          padding: 30px;
+        }
       }
     }
 
@@ -45,7 +72,9 @@
       align-items: center;
       justify-content: space-around;
       height: 677px;
-
+      @media(max-width: $l-screen){
+        height: auto;
+      }
       h1{
         @include fade-in-animation(2s);
         font-size: $xl-font-size;
@@ -63,6 +92,9 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 15px 30px;
+        @media(max-width: $l-screen){
+          height: auto;
+        }
 
         p{
           line-height: 40px;
@@ -80,6 +112,9 @@
     background-color: $goldish;
     height: 635px;
     width: 100%;
+    @media(max-width: $l-screen){
+      display: none;
+    }
   }
 }
 

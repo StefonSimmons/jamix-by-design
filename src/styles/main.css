@@ -324,6 +324,13 @@ footer {
   }
 }
 
+@media (max-width: 992px) {
+  .about-screen {
+    padding: 0;
+    height: auto;
+  }
+}
+
 .about-screen .about-floater {
   display: flex;
   flex-direction: column;
@@ -337,14 +344,39 @@ footer {
   z-index: 1;
 }
 
+@media (max-width: 992px) {
+  .about-screen .about-floater {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: initial;
+  }
+}
+
 .about-screen .about-floater .about-me {
   display: flex;
   justify-content: space-evenly;
 }
 
+@media (max-width: 992px) {
+  .about-screen .about-floater .about-me {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 1106px;
+  }
+}
+
 .about-screen .about-floater .about-me img {
   height: 545px;
   border: 2px solid black;
+}
+
+@media (max-width: 992px) {
+  .about-screen .about-floater .about-me img {
+    width: 410px;
+    border: none;
+  }
 }
 
 .about-screen .about-floater .about-me p {
@@ -359,12 +391,27 @@ footer {
   word-spacing: 10px;
 }
 
+@media (max-width: 992px) {
+  .about-screen .about-floater .about-me p {
+    border: none;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+  }
+}
+
 .about-screen .about-floater .about-jamix {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   height: 677px;
+}
+
+@media (max-width: 992px) {
+  .about-screen .about-floater .about-jamix {
+    height: auto;
+  }
 }
 
 .about-screen .about-floater .about-jamix h1 {
@@ -395,6 +442,12 @@ footer {
   padding: 15px 30px;
 }
 
+@media (max-width: 992px) {
+  .about-screen .about-floater .about-jamix .about-jamix-ps {
+    height: auto;
+  }
+}
+
 .about-screen .about-floater .about-jamix .about-jamix-ps p {
   line-height: 40px;
   font-size: 24px;
@@ -416,6 +469,12 @@ footer {
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-screen .about-gold-bg {
+    display: none;
   }
 }
 
