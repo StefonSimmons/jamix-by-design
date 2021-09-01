@@ -114,7 +114,7 @@
             }
             ul{
               margin: 0;
-              @media (max-width: $l-screen) {
+              @media (max-width: $xl-screen) {
                 align-self: flex-start;
                 padding-left: 135px; 
               }
