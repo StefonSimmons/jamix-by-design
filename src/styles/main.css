@@ -751,6 +751,8 @@ footer {
 
 .services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content ul {
   margin: 0;
+  align-self: flex-start;
+  padding-left: 45px;
 }
 
 .services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content ul li {
