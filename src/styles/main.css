@@ -751,8 +751,20 @@ footer {
 
 .services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content ul {
   margin: 0;
-  align-self: flex-start;
-  padding-left: 45px;
+}
+
+@media (max-width: 992px) {
+  .services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content ul {
+    align-self: flex-start;
+    padding-left: 135px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content ul {
+    align-self: flex-start;
+    padding-left: 45px;
+  }
 }
 
 .services-screen .services-grid .service-card-container .service-card-color .service-card .service-card-content ul li {

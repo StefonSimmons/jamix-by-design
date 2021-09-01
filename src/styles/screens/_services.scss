@@ -114,8 +114,14 @@
             }
             ul{
               margin: 0;
-              align-self: flex-start;
-              padding-left: 45px; 
+              @media (max-width: $l-screen) {
+                align-self: flex-start;
+                padding-left: 135px; 
+              }
+              @media (max-width: $m-screen) {
+                align-self: flex-start;
+                padding-left: 45px; 
+              }
 
               li {
                 font-size: $m-font-size;
