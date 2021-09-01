@@ -8,7 +8,7 @@ export default function Contact() {
       <a href="https://www.instagram.com/jamix_by_design/" target="_blank" rel="noreferrer">
         <img src={instagram} alt="instagram" />
       </a>
-      <a href='mailto:jamixdesigns10@gmail.com' target='_blank' rel="noopener noreferrer">
+      <a href='mailto:events@jamixbydesign.com' target='_blank' rel="noopener noreferrer">
         <img src={gmail} alt="gmail" />
       </a>
       <a href="https://www.facebook.com/JAMixByDesign/" target='_blank' rel="noopener noreferrer">
