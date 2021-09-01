@@ -13,7 +13,7 @@ export default function GalleryCarousel({ index, setIndex, setGalleryModal, gall
       { galleryModal &&
         <div className="gallery-carousel">
           <span className="close" onClick={() => setGalleryModal(false)}>X</span>
-          <Carousel activeIndex={index} onSelect={handleSelect} variant="dark">
+          <Carousel activeIndex={index} onSelect={handleSelect} indicators={false}>
             {gallery.map((photo, idx) => (
               <Carousel.Item key={idx}>
                 <img
