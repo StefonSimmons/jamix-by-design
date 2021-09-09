@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   margin: 115px 0 75px 0;
   @media(max-width: $xl-screen){
     justify-content: center;
@@ -27,8 +27,8 @@
     height: 1245px;
     margin-top: 80px;
     display: grid;
-    grid-template-columns: repeat(30, 1fr);
-    grid-template-rows: repeat(36, 1fr);
+    grid-template-columns: repeat(30, 3.33%);
+    grid-template-rows: repeat(36, 2.77%);
 
     @media (max-width: $xl-screen) {
       height: auto;
@@ -171,6 +171,6 @@
 }
 
 .decorate {
-  grid-column: 7 / span 3;
-  grid-row: 18 / span 3;
+  grid-column: 8 / span 3;
+  grid-row: 19 / span 3;
 }
