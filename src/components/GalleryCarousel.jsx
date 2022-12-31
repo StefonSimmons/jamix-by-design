@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 import { gallery } from '../import-info/gallery'
 
-export default function GalleryCarousel({ index, setIndex, setGalleryModal, galleryModal }) {
+export default function GalleryCarousel({ index, setIndex, setGalleryModal, galleryModal, airtablePhotos }) {
 
   const handleSelect = (selectedIndex, _) => {
     setIndex(selectedIndex);
@@ -14,15 +14,17 @@ export default function GalleryCarousel({ index, setIndex, setGalleryModal, gall
         <div className="gallery-carousel">
           <span className="close" onClick={() => setGalleryModal(false)}>X</span>
           <Carousel activeIndex={index} onSelect={handleSelect} indicators={false}>
-            {gallery.map((photo, idx) => (
-              <Carousel.Item key={idx}>
-                <img
-                  className="d-block"
-                  src={photo}
-                  alt={`slide ${idx + 1}`}
-                />
-              </Carousel.Item>
-            ))}
+            {[...gallery, ...airtablePhotos].map((photo, idx) => {
+              return (
+                <Carousel.Item key={idx}>
+                  <img
+                    className="d-block"
+                    src={photo.url || photo}
+                    alt={`slide ${idx + 1}`}
+                  />
+                </Carousel.Item>
+              )
+            })}
           </Carousel>
         </div>
       }

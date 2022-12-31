@@ -13,6 +13,9 @@ import "./styles/main.css"
 
 function App() {
 
+  // FOR GALLERY
+  const [airtablePhotos, setAirtablePhotos] = useState([])
+
   // FOR GALLERY MODAL
   const [index, setIndex] = useState(0);
   const [galleryModal, setGalleryModal] = useState(false)
@@ -21,35 +24,36 @@ function App() {
   const [menuModal, setMenuModal] = useState(false)
 
   return (
-    <Layout setMenuModal={setMenuModal}>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/about">
-        <About />
-      </Route>
-      <Route exact path="/contact">
-        <Contact />
-      </Route>
-      <Route exact path="/services">
-        <Services />
-      </Route>
-      <Route exact path="/gallery">
-        <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} />
-      </Route>
-      
-      {/* Non-routes */}
-      <GalleryCarousel
-        setIndex={setIndex}
-        index={index}
-        setGalleryModal={setGalleryModal}
-        galleryModal={galleryModal}
-      />
-      <MenuModal
-        menuModal={menuModal}
-        setMenuModal={setMenuModal}
-      />
-    </Layout>
+      <Layout setMenuModal={setMenuModal}>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/contact">
+          <Contact />
+        </Route>
+        <Route exact path="/services">
+          <Services />
+        </Route>
+        <Route exact path="/gallery">
+          <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos} />
+        </Route>
+        
+        {/* Non-routes */}
+        <GalleryCarousel
+          setIndex={setIndex}
+          index={index}
+          setGalleryModal={setGalleryModal}
+          galleryModal={galleryModal}
+          airtablePhotos={airtablePhotos} 
+        />
+        <MenuModal
+          menuModal={menuModal}
+          setMenuModal={setMenuModal}
+        />
+      </Layout>
   );
 }
 
