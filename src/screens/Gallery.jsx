@@ -25,6 +25,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
     }
 
     getAirtablePhotos()
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -46,7 +47,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
         })}
       </section>
       <div style={{borderTop: "solid black 2px"}}>
-        <iframe className="airtable-embed" src="https://airtable.com/embed/shrIwCRb7zRzmzD3l?backgroundColor=red" frameBorder="0" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc"}}></iframe>
+        <iframe className="airtable-embed" src="https://airtable.com/embed/shrIwCRb7zRzmzD3l?backgroundColor=red" frameBorder="0" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
       </div>
     </div>
   )
