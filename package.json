@@ -38,5 +38,8 @@
   },
   "devDependencies": {
     "web-vitals": "^2.1.0"
+  },
+  "resolutions": {
+    "autoprefixer": "10.4.5"
   }
 }
