@@ -8,7 +8,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
 
   useEffect(() => {
     const getAirtablePhotos = async () => {
-      const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/photos/?view=Grid view`
+      const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/gallery/?view=Grid view`
       const config = {
         headers: {
           "Authorization": `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
