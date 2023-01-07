@@ -46,6 +46,15 @@
     
     }
   }
+  .subheader-home{
+    @include fade-in-animation(2s);
+    font-size: $l-font-size;
+    margin: 0 15px;
+    text-align: center;
+    @media (max-width: $m-screen) {
+      font-size: $m-font-size;
+    }
+  }
   img{
     width: 100%;
     height: auto;

@@ -8,6 +8,8 @@
   color: black;
   background: $gold;
   transition: all .3s ease-in-out;
+  box-shadow: 5px 5px 15px 0px black;
+
   &:hover{
     background-color: rgba(0, 0, 0,.8);
     background-color: $goldish;

@@ -9,6 +9,7 @@ export default function Home() {
         <h1 className="shifted-header-home">With You In Mind</h1>
       </section>
       <BigButton text="Browse our Services" screen="services"/>
+      <p className="subheader-home">A Virginia & beyond events/wedding management company</p>
       <img src={homeFloral} alt="floral center piece" />
     </div>
   )
