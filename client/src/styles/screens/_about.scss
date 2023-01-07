@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: space-around;
     position: absolute;
-    top: (25%/4); //  a quarter of the background position
+    top: calc(25%/4); //  a quarter of the background position
     box-sizing: border-box;
     height: 83%;
     width: 83%; // (1196px/1440px)

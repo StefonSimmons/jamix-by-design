@@ -24,7 +24,9 @@
     }
     @media (max-width: $l-screen) {
       font-size: $l-font-size;
-      text-align: center;
+    }
+    @media (max-width: $s-screen) {
+      text-align: left;
     }
   }
   .services-section {
@@ -48,10 +50,6 @@
       @media (max-width: $m-screen) {
         margin: 15px 0;
       }
-      // @media (max-width: $xs-screen) {
-      //   width: 100%;
-      //   height: 270px;
-      // }
 
       .service-card-color {
         width: 150px;
@@ -61,18 +59,13 @@
         box-sizing: border-box;
         transform: rotate(-23.6deg);
 
-        // @media (max-width: $m-screen) {
-        //   width: 250px;
-        //   height: 190px;
-        // }
         @media (max-width: $m-screen) {
           display: flex;
           justify-content: center;
           align-items: center;
+          width: 100%;
           height: 100px;
-          width: 170px;
           transform: rotate(0deg);
-          border-radius: 5px;
         }
         .service-card {
           width: 147px;
@@ -81,14 +74,10 @@
           background-color: white;
           border: black solid 2px;
           transform: rotate(13.73deg);
-          
-          // @media (max-width: $m-screen) {
-            //   width: 248px;
-            //   height: 188px;
-            // }
-            @media (max-width: $m-screen) {
-              transform: rotate(0deg);
-              border-radius: 5px;
+
+          @media (max-width: $m-screen) {
+            transform: rotate(0deg);
+            width: 95%;
           }
           .service-card-content {
             display: flex;
@@ -106,30 +95,13 @@
               font-weight: 700;
               letter-spacing: 2px;
               margin: 0;
-              // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-              // @media (max-width: $m-screen) {
-              //   font-size: $l-font-size;
-              // }
             }
             ul{
               margin: 0;
-              // @media (max-width: $xl-screen) {
-              //   align-self: flex-start;
-              //   padding-left: 135px; 
-              // }
-              // @media (max-width: $m-screen) {
-              //   align-self: flex-start;
-              //   padding-left: 45px; 
-              // }
-
               li {
                 font-size: $m-font-size;
                 list-style-type: disc;
                 margin: 15px 0;
-                // @media (max-width: $m-screen) {
-                //   font-size: $s-font-size;
-                //   margin: 8px 0 0 0;
-                // }
               }
             }
           }
@@ -141,6 +113,9 @@
   .services-about {
     font-size: $m-font-size;
     margin-bottom: 75px;
+    @media(max-width: $s-screen){
+      font-size: $s-font-size;
+    }
   }
 
   h2{
@@ -156,34 +131,62 @@
       border: solid black 2px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       padding: 15px;
-      padding-right: 60px;
       margin: 60px 0;
-
+      @media(max-width: $m-screen){
+        margin: 15px 0;
+      }
+      
       .package-header{
         display: grid;
         align-items: center;
         grid-template-columns: 3fr 4fr auto;
         height: 94px;
+        padding-right: 45px;
+        
+        @media(max-width: $m-screen){
+          grid-template-columns: 1fr 1fr auto;
+          height: 45px;
+          padding-right: 15px;
+        }
+        @media(max-width: $s-screen){
+          grid-template-columns: 2fr auto;
+        }
         h3, p{
           margin-bottom: 0;
         }
         h3{
           font-size: $l-font-size;
+          @media(max-width: $m-screen){
+            font-size: $m-font-size;
+          }
         }
         p{
           font-size: $m-font-size;
+          @media(max-width: $m-screen){
+            font-size: $s-font-size;
+          }
+          @media(max-width: $s-screen){
+            display: none
+          }
         };
         .arrow{
           border-bottom: 3px solid black;
           border-left: 3px solid black;
           transform: rotate(-45deg);
-          height: 35px;
-          width: 35px;
+          height: 36px;
+          width: 36px;
           position: relative;
           top: -5px;
           &.open{
             transform: rotate(135deg);
             top: 15px;
+            @media(max-width: $m-screen){
+              top: 5px;
+            }
+          }
+          @media(max-width: $m-screen){
+            height: 18px;
+            width: 18px;
           }
         }
       }
@@ -193,10 +196,17 @@
         }
         .package-description {
           font-size: $m-font-size;
+          @media(max-width: $m-screen){
+            font-size: $s-font-size;
+            margin-top: 5px;
+          }
         }
         .package-price {
           font-weight: 700;
           font-size: $m-font-size;
+          @media(max-width: $m-screen){
+            font-size: $s-font-size;
+          }
         }
       }
     }
