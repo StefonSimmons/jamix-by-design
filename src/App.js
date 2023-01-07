@@ -24,6 +24,7 @@ function App() {
   const [menuModal, setMenuModal] = useState(false)
 
   return (
+    <>
       <Layout setMenuModal={setMenuModal}>
         <Route exact path="/">
           <Home />
@@ -53,7 +54,13 @@ function App() {
           menuModal={menuModal}
           setMenuModal={setMenuModal}
         />
+
       </Layout>
+      {/* <iframe className="airtable-embed" src="https://airtable.com/embed/shrLIQhC3NM19VGtV?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe> */}
+      {/* <iframe className="airtable-embed" src="https://airtable.com/embed/shrqgKj7juCAXE8kO?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe> */}
+      <iframe className="airtable-embed" src="https://airtable.com/embed/shr9jRgZMKBIHOsyl?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
+      
+      </>
   );
 }
 
