@@ -79,6 +79,7 @@
   color: black;
   background: #E1C997;
   transition: all 0.3s ease-in-out;
+  box-shadow: 5px 5px 15px 0px black;
 }
 .big-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -295,6 +296,26 @@ footer {
 @media (max-width: 992px) {
   .home-screen section .shifted-header-home {
     margin: 0;
+  }
+}
+.home-screen .subheader-home {
+  -webkit-animation: fade-in 2s ease-in-out;
+          animation: fade-in 2s ease-in-out;
+  font-size: 36px;
+  margin: 0 15px;
+  text-align: center;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .home-screen .subheader-home {
+    font-size: 24px;
   }
 }
 .home-screen img {
@@ -689,6 +710,13 @@ footer {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 15px;
   margin: 60px 0;
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+}
+.services-screen .packages .package-card:hover, .services-screen .packages .package-card.open {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(225, 201, 151, 0.7);
+  box-shadow: 5px 5px 5px 0px black;
 }
 @media (max-width: 768px) {
   .services-screen .packages .package-card {

@@ -39,7 +39,7 @@ export default function Services() {
       <h2>Packages</h2>
       <ul className="packages">
         {events.map((event, idx) => (
-          <li key={idx} className="package-card" onClick={() => togglePackageCard(event)} >
+          <li key={idx} className={`package-card ${isOpen[event] ? 'open': 'close'}`} onClick={() => togglePackageCard(event)} >
             <div className="package-header">
               <h3>{event}</h3>
               <p>consultation</p>
