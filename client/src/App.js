@@ -11,6 +11,7 @@ import MenuModal from "./components/MenuModal";
 
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import Accounts from "./screens/Accounts";
 
 import "./styles/main.css"
 import {register, login, verify} from './services/auth'
@@ -60,6 +61,9 @@ function App() {
         </Route>
         <Route exact path="/jamix-admin/register">
           <Register register={register} setUser={setUser}/>
+        </Route>
+        <Route exact path="/jamix-admin/accounts">
+          <Accounts/>
         </Route>
         
         {/* Non-routes */}
