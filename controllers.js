@@ -32,7 +32,8 @@ const register = async (req, res) => {
         const token = jwt.sign(payload, SECRET_KEY) // encrypt email payload
 
         delete record.fields.passwordDigest
-        res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Max-Age=${exp}`).json({ ...record.fields, recordID: record.getId() })
+        res.json({ ...record.fields, recordID: record.getId(), token })
+            // .setHeader('Set-Cookie', `token=${token}; Max-Age=${exp}`)
     });
 }
 
@@ -49,18 +50,14 @@ const login = (req, res) => {
         }
 
         const user = records.find(record => record.fields.email === email)
-        if (user) {
-            const isAuthorized = await bcrypt.compare(password, user.fields.passwordDigest)
-            if (isAuthorized) {
-                const payload = { email: user.fields.email, recordID: user.getId(), isOwner: user.fields.isOwner}
-                const token = jwt.sign(payload, SECRET_KEY)
+        const isAuthorized = await bcrypt.compare(password, user.fields.passwordDigest)
+        if (isAuthorized) {
+            const payload = { email: user.fields.email, recordID: user.getId(), isOwner: user.fields.isOwner}
+            const token = jwt.sign(payload, SECRET_KEY)
 
-                delete user.fields.passwordDigest
-                // sets the jwt in an HTTP only cookie which means that they are not accessible to client-side JavaScript. This makes them more persistent, as they cannot be deleted by the user or through a script.
-                res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Max-Age=${exp}`).json({ ...user.fields, recordID: user.getId() })
-            } else {
-                res.status(401).json({ error: 'Unauthorized' })
-            }
+            delete user.fields.passwordDigest
+            res.json({ ...user.fields, recordID: user.getId(), token })
+            // .setHeader('Set-Cookie', `token=${token}; Max-Age=${exp}`)
         } else {
             res.status(401).json({ error: 'Unauthorized' })
         }
@@ -70,7 +67,7 @@ const login = (req, res) => {
 // VERIFY
 const verify = (req, res) => {
     try {
-        const token = req.header('cookie').split('=')[1] // grabs the token from the Cookie header ('token=<token>') set by setHeader
+        const token = req.header('Authorization').split(' ')[1] // grabs the token from the Authorization header ('Bearer <token>')
         const decodedToken = jwt.verify(token, SECRET_KEY) // decodes the token obj
         res.json(decodedToken) // responds with decoded value
     } catch (error) {
