@@ -55,10 +55,10 @@ function App() {
         <Route exact path="/gallery">
           <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos} />
         </Route>
-        <Route exact path="/jamix-admin-login">
+        <Route exact path="/jamix-admin/login">
           <Login login={login} setUser={setUser}/>
         </Route>
-        <Route>
+        <Route exact path="/jamix-admin/register">
           <Register register={register} setUser={setUser}/>
         </Route>
         

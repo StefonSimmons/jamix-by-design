@@ -16,19 +16,20 @@ const greet = (_, res) => {
 
 // REGISTER
 const register = async (req, res) => {
-    const { email, password, isOwner } = req.body
+    const { email, password, isOwner, isAdmin } = req.body
     const passwordDigest = await bcrypt.hash(password, 11)
 
     base('users').create({
         "email": email,
         "passwordDigest": passwordDigest,
-        "isOwner": isOwner
+        "isOwner": isOwner,
+        "isAdmin": isAdmin
     }, function (err, record) {
         if (err) {
             console.error(err);
             return;
         }
-        const payload = { email: record.fields.email, recordID: record.getId(), isOwner }
+        const payload = { email: record.fields.email, recordID: record.getId(), isOwner, isAdmin }
         const token = jwt.sign(payload, SECRET_KEY) // encrypt email payload
 
         delete record.fields.passwordDigest
@@ -52,7 +53,7 @@ const login = (req, res) => {
         const user = records.find(record => record.fields.email === email)
         const isAuthorized = await bcrypt.compare(password, user.fields.passwordDigest)
         if (isAuthorized) {
-            const payload = { email: user.fields.email, recordID: user.getId(), isOwner: user.fields.isOwner}
+            const payload = { email: user.fields.email, recordID: user.getId(), isOwner: user.fields.isOwner, isAdmin: user.fields.isAdmin }
             const token = jwt.sign(payload, SECRET_KEY)
 
             delete user.fields.passwordDigest

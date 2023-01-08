@@ -45,9 +45,7 @@ export const verify = async () => {
                 headers: { 'Authorization': `Bearer ${token}` }
             }
             const res = await api.get('/verify', header)
-            if(res){
-                return res.data
-            }
+            return res.data
         }
     } catch (e) {
         console.error(e.response.data)

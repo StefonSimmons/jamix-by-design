@@ -29,7 +29,7 @@ export default function Login({ login, setUser }) {
                 <input type="text" name="email" placeholder="Email" onChange={(e) => handleChange(e)}/>
                 <input type="password" name="password" placeholder="Password" onChange={(e) => handleChange(e)}/>
                 <input type="submit" value="Login" />
-                <Link to="/jamix-admin-register">
+                <Link to="/jamix-admin/register">
                     Create Account
                 </Link>
             </form>
