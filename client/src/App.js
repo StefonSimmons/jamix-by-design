@@ -9,6 +9,8 @@ import Gallery from "./screens/Gallery"
 import GalleryCarousel from "./components/GalleryCarousel";
 import MenuModal from "./components/MenuModal";
 
+import Login from "./screens/Login";
+
 import "./styles/main.css"
 
 function App() {
@@ -40,6 +42,9 @@ function App() {
         </Route>
         <Route exact path="/gallery">
           <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos} />
+        </Route>
+        <Route exact path="/jamix-admin-login">
+          <Login/>
         </Route>
         
         {/* Non-routes */}
