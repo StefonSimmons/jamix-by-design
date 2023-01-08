@@ -76,10 +76,22 @@ const verify = (req, res) => {
     }
 }
 
+// DESTROY
+const destroy = (req, res) => {
+    const {usersIDs} = req.body
+    base('users').destroy(usersIDs, (err) => {
+        if (err) {
+          console.error(err.message);
+          return;
+        }
+        res.status(204)
+    });
+}
 
 module.exports = {
     register,
     login,
     verify,
+    destroy,
     greet
 }
