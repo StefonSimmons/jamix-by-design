@@ -846,6 +846,54 @@ footer {
   }
 }
 
+.login-screen {
+  height: 768px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-screen .login-form {
+  background: #F0F0F0;
+  border: #F0F0F0 solid 1px;
+  border-radius: 15px;
+  width: 665px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 30px;
+}
+.login-screen .login-form input[type=text], .login-screen .login-form input[type=password] {
+  border: none;
+  border-bottom: #B3B3B3 solid 1px;
+  background: #F0F0F0;
+  font-size: 18px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+.login-screen .login-form input[type=text]::-moz-placeholder, .login-screen .login-form input[type=password]::-moz-placeholder {
+  text-transform: uppercase;
+}
+.login-screen .login-form input[type=text]:-ms-input-placeholder, .login-screen .login-form input[type=password]:-ms-input-placeholder {
+  text-transform: uppercase;
+}
+.login-screen .login-form input[type=text]::placeholder, .login-screen .login-form input[type=password]::placeholder {
+  text-transform: uppercase;
+}
+.login-screen .login-form input[type=submit] {
+  background: #E1C997;
+  border-radius: 45px;
+  border: #E1C997 solid 1px;
+  font-size: 36px;
+  height: 90px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.login-screen .login-form input[type=submit]:hover {
+  background: rgba(225, 201, 151, 0.7);
+  border: rgba(225, 201, 151, 0.7) solid 1px;
+}
+
 body {
   font-family: "Reem Kufi", sans-serif;
 }
