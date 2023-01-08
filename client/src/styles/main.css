@@ -883,6 +883,7 @@ footer {
 .login-screen .login-form .is-owner-section, .login-screen .register-form .is-owner-section, .register-screen .login-form .is-owner-section, .register-screen .register-form .is-owner-section {
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 }
 .login-screen .login-form .is-owner-section label, .login-screen .register-form .is-owner-section label, .register-screen .login-form .is-owner-section label, .register-screen .register-form .is-owner-section label {
   text-transform: uppercase;
