@@ -52,3 +52,7 @@ export const verify = async () => {
         return null
     }
 }
+
+export const destroyUsers = async (deletedUsers) => {
+    await api.post('/delete', {usersIDs: deletedUsers})
+}
