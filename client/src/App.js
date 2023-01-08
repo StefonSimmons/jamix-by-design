@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import About from "./screens/About";
@@ -12,6 +12,7 @@ import MenuModal from "./components/MenuModal";
 import Login from "./screens/Login";
 
 import "./styles/main.css"
+import {register, login, verify} from './services/auth'
 
 function App() {
 
@@ -24,6 +25,16 @@ function App() {
 
   // FOR MOBILE MENU MODAL
   const [menuModal, setMenuModal] = useState(false)
+
+  // FOR AUTHENTICATION
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    const reAuthenticateUser = async () => {
+      const res = await verify()
+      setUser(res)
+    }
+    reAuthenticateUser()
+  }, [])
 
   return (
     <>
@@ -44,7 +55,7 @@ function App() {
           <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos} />
         </Route>
         <Route exact path="/jamix-admin-login">
-          <Login/>
+          <Login login={login} setUser={setUser}/>
         </Route>
         
         {/* Non-routes */}
