@@ -10,6 +10,7 @@ import GalleryCarousel from "./components/GalleryCarousel";
 import MenuModal from "./components/MenuModal";
 
 import Login from "./screens/Login";
+import Register from "./screens/Register";
 
 import "./styles/main.css"
 import {register, login, verify} from './services/auth'
@@ -56,6 +57,9 @@ function App() {
         </Route>
         <Route exact path="/jamix-admin-login">
           <Login login={login} setUser={setUser}/>
+        </Route>
+        <Route>
+          <Register register={register} setUser={setUser}/>
         </Route>
         
         {/* Non-routes */}

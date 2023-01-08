@@ -880,6 +880,16 @@ footer {
 .login-screen .login-form input[type=text]::placeholder, .login-screen .login-form input[type=password]::placeholder, .login-screen .register-form input[type=text]::placeholder, .login-screen .register-form input[type=password]::placeholder, .register-screen .login-form input[type=text]::placeholder, .register-screen .login-form input[type=password]::placeholder, .register-screen .register-form input[type=text]::placeholder, .register-screen .register-form input[type=password]::placeholder {
   text-transform: uppercase;
 }
+.login-screen .login-form .is-owner-section, .login-screen .register-form .is-owner-section, .register-screen .login-form .is-owner-section, .register-screen .register-form .is-owner-section {
+  display: flex;
+  align-items: center;
+}
+.login-screen .login-form .is-owner-section label, .login-screen .register-form .is-owner-section label, .register-screen .login-form .is-owner-section label, .register-screen .register-form .is-owner-section label {
+  text-transform: uppercase;
+}
+.login-screen .login-form .is-owner-section input[type=checkbox], .login-screen .register-form .is-owner-section input[type=checkbox], .register-screen .login-form .is-owner-section input[type=checkbox], .register-screen .register-form .is-owner-section input[type=checkbox] {
+  margin-left: 5px;
+}
 .login-screen .login-form input[type=submit], .login-screen .register-form input[type=submit], .register-screen .login-form input[type=submit], .register-screen .register-form input[type=submit] {
   background: #E1C997;
   border-radius: 45px;
