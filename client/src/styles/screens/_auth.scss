@@ -38,19 +38,6 @@
                 margin-left: 5px;
             }
         }
-        input[type=submit]{
-            background: $gold;
-            border-radius: 45px;
-            border: $gold solid 1px;
-            font-size: $l-font-size;
-            height: 90px;
-            margin-top: 15px;
-            cursor: pointer;
-            &:hover{
-                background: $goldish;
-                border: $goldish solid 1px
-            }
-        }
         a{
             margin-top: 60px;
             text-align: center;

@@ -99,6 +99,20 @@
   }
 }
 
+.big-secure-btn {
+  background: #E1C997;
+  border-radius: 45px;
+  border: #E1C997 solid 1px;
+  font-size: 36px;
+  height: 90px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.big-secure-btn:hover {
+  background: rgba(225, 201, 151, 0.7);
+  border: rgba(225, 201, 151, 0.7) solid 1px;
+}
+
 .hamburger-menu-toggler {
   cursor: pointer;
   display: none;
@@ -891,19 +905,6 @@ footer {
 .login-screen .login-form .is-owner-section input[type=checkbox], .login-screen .register-form .is-owner-section input[type=checkbox], .register-screen .login-form .is-owner-section input[type=checkbox], .register-screen .register-form .is-owner-section input[type=checkbox] {
   margin-left: 5px;
 }
-.login-screen .login-form input[type=submit], .login-screen .register-form input[type=submit], .register-screen .login-form input[type=submit], .register-screen .register-form input[type=submit] {
-  background: #E1C997;
-  border-radius: 45px;
-  border: #E1C997 solid 1px;
-  font-size: 36px;
-  height: 90px;
-  margin-top: 15px;
-  cursor: pointer;
-}
-.login-screen .login-form input[type=submit]:hover, .login-screen .register-form input[type=submit]:hover, .register-screen .login-form input[type=submit]:hover, .register-screen .register-form input[type=submit]:hover {
-  background: rgba(225, 201, 151, 0.7);
-  border: rgba(225, 201, 151, 0.7) solid 1px;
-}
 .login-screen .login-form a, .login-screen .register-form a, .register-screen .login-form a, .register-screen .register-form a {
   margin-top: 60px;
   text-align: center;
@@ -924,6 +925,8 @@ footer {
 .accounts-screen .accounts-form {
   height: 100%;
   width: 992px;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   padding: 15px;
   border: black solid 1px;

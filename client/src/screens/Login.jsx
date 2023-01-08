@@ -28,7 +28,7 @@ export default function Login({ login, setUser }) {
             <form className="login-form" onSubmit={(e) => getUser(e)}>
                 <input type="text" name="email" placeholder="Email" onChange={(e) => handleChange(e)}/>
                 <input type="password" name="password" placeholder="Password" onChange={(e) => handleChange(e)}/>
-                <input type="submit" value="Login" />
+                <input className="big-secure-btn" type="submit" value="Login" />
                 <Link to="/jamix-admin/register">
                     Create Account
                 </Link>

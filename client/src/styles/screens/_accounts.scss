@@ -12,6 +12,8 @@
     .accounts-form{
         height: 100%;
         width: 992px;
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
         padding: 15px;
         border: black solid 1px;

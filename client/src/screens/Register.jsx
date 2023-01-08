@@ -44,7 +44,7 @@ export default function Register({ register, setUser }) {
                     <label htmlFor="isOwner">Owner?</label>
                     <input type="checkbox" name="isOwner" id="isOwner" checked={userCred.isOwner} onChange={handleCheck}/>
                 </div>
-                <input type="submit" value="Create Account" />
+                <input className="big-secure-btn" type="submit" value="Create Account" />
                 <Link to="/jamix-admin/login">
                     Login
                 </Link>
