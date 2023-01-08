@@ -4,7 +4,7 @@
 @import './animations';
 @import './components/gallery-carousel', './components/buttons', './components/hamburger_menu', './components/menu_modal';
 @import './layout/layout', './layout/header', './layout/footer';
-@import './screens/home', './screens/about', './screens/contact', './screens/services', './screens/gallery', './screens/login';
+@import './screens/home', './screens/about', './screens/contact', './screens/services', './screens/gallery', './screens/auth';
 
 body{
   font-family: $primary-font;

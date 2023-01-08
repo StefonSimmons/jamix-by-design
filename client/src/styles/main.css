@@ -846,14 +846,14 @@ footer {
   }
 }
 
-.login-screen {
+.login-screen, .register-screen {
   height: 768px;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.login-screen .login-form {
+.login-screen .login-form, .login-screen .register-form, .register-screen .login-form, .register-screen .register-form {
   background: #F0F0F0;
   border: #F0F0F0 solid 1px;
   border-radius: 15px;
@@ -863,7 +863,7 @@ footer {
   flex-direction: column;
   padding: 60px 30px;
 }
-.login-screen .login-form input[type=text], .login-screen .login-form input[type=password] {
+.login-screen .login-form input[type=text], .login-screen .login-form input[type=password], .login-screen .register-form input[type=text], .login-screen .register-form input[type=password], .register-screen .login-form input[type=text], .register-screen .login-form input[type=password], .register-screen .register-form input[type=text], .register-screen .register-form input[type=password] {
   border: none;
   border-bottom: #B3B3B3 solid 1px;
   background: #F0F0F0;
@@ -871,16 +871,16 @@ footer {
   height: 40px;
   margin-bottom: 30px;
 }
-.login-screen .login-form input[type=text]::-moz-placeholder, .login-screen .login-form input[type=password]::-moz-placeholder {
+.login-screen .login-form input[type=text]::-moz-placeholder, .login-screen .login-form input[type=password]::-moz-placeholder, .login-screen .register-form input[type=text]::-moz-placeholder, .login-screen .register-form input[type=password]::-moz-placeholder, .register-screen .login-form input[type=text]::-moz-placeholder, .register-screen .login-form input[type=password]::-moz-placeholder, .register-screen .register-form input[type=text]::-moz-placeholder, .register-screen .register-form input[type=password]::-moz-placeholder {
   text-transform: uppercase;
 }
-.login-screen .login-form input[type=text]:-ms-input-placeholder, .login-screen .login-form input[type=password]:-ms-input-placeholder {
+.login-screen .login-form input[type=text]:-ms-input-placeholder, .login-screen .login-form input[type=password]:-ms-input-placeholder, .login-screen .register-form input[type=text]:-ms-input-placeholder, .login-screen .register-form input[type=password]:-ms-input-placeholder, .register-screen .login-form input[type=text]:-ms-input-placeholder, .register-screen .login-form input[type=password]:-ms-input-placeholder, .register-screen .register-form input[type=text]:-ms-input-placeholder, .register-screen .register-form input[type=password]:-ms-input-placeholder {
   text-transform: uppercase;
 }
-.login-screen .login-form input[type=text]::placeholder, .login-screen .login-form input[type=password]::placeholder {
+.login-screen .login-form input[type=text]::placeholder, .login-screen .login-form input[type=password]::placeholder, .login-screen .register-form input[type=text]::placeholder, .login-screen .register-form input[type=password]::placeholder, .register-screen .login-form input[type=text]::placeholder, .register-screen .login-form input[type=password]::placeholder, .register-screen .register-form input[type=text]::placeholder, .register-screen .register-form input[type=password]::placeholder {
   text-transform: uppercase;
 }
-.login-screen .login-form input[type=submit] {
+.login-screen .login-form input[type=submit], .login-screen .register-form input[type=submit], .register-screen .login-form input[type=submit], .register-screen .register-form input[type=submit] {
   background: #E1C997;
   border-radius: 45px;
   border: #E1C997 solid 1px;
@@ -889,9 +889,13 @@ footer {
   margin-top: 15px;
   cursor: pointer;
 }
-.login-screen .login-form input[type=submit]:hover {
+.login-screen .login-form input[type=submit]:hover, .login-screen .register-form input[type=submit]:hover, .register-screen .login-form input[type=submit]:hover, .register-screen .register-form input[type=submit]:hover {
   background: rgba(225, 201, 151, 0.7);
   border: rgba(225, 201, 151, 0.7) solid 1px;
+}
+.login-screen .login-form a, .login-screen .register-form a, .register-screen .login-form a, .register-screen .register-form a {
+  margin-top: 60px;
+  text-align: center;
 }
 
 body {

@@ -1,11 +1,11 @@
-.login-screen{
+.login-screen, .register-screen{
     height: 768px;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .login-form{
+    .login-form, .register-form{
         background: $secure-grey;
         border: $secure-grey solid 1px;
         border-radius: 15px;
@@ -39,6 +39,10 @@
                 background: $goldish;
                 border: $goldish solid 1px
             }
+        }
+        a{
+            margin-top: 60px;
+            text-align: center;
         }
     }
 }
