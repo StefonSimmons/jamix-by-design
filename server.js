@@ -6,6 +6,7 @@ const {register, verify, login, greet} = require('./controllers')
 
 const app = express()
 
+// MIDDLEWARE
 app.use(logger('combined'))
 app.use(express.json())
 app.use(cors())
