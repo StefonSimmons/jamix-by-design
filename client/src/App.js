@@ -14,7 +14,7 @@ import Register from "./screens/Register";
 import Accounts from "./screens/Accounts";
 
 import "./styles/main.css"
-import {register, login, verify, destroyUsers} from './services/auth'
+import {register, login, verify, destroyUsers, updateUsers} from './services/auth'
 
 function App() {
 
@@ -63,7 +63,7 @@ function App() {
           <Register register={register} setUser={setUser}/>
         </Route>
         <Route exact path="/jamix-admin/accounts">
-          <Accounts destroyUsers={destroyUsers}/>
+          <Accounts destroyUsers={destroyUsers} updateUsers={updateUsers}/>
         </Route>
         
         {/* Non-routes */}

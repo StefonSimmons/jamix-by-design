@@ -56,3 +56,7 @@ export const verify = async () => {
 export const destroyUsers = async (deletedUsers) => {
     await api.post('/delete', {usersIDs: deletedUsers})
 }
+
+export const updateUsers = async (updatedUsers) => {
+    await api.post('/update', {users: updatedUsers})
+}
