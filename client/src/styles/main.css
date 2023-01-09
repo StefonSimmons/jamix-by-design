@@ -930,6 +930,7 @@ footer {
   box-sizing: border-box;
   padding: 15px;
   border: black solid 1px;
+  margin-bottom: 30px;
 }
 .accounts-screen .account {
   display: grid;
