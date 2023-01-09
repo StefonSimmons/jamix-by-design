@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
-const {register, verify, login, destroy, greet} = require('./controllers')
+const {register, verify, login, destroy, greet, update} = require('./controllers')
 
 const app = express()
 
@@ -35,3 +35,6 @@ app.get('/verify', verify)
 
 // Delete User. post request because I'm sending an array of IDs
 app.post('/delete', destroy)
+
+// Update User. post req because I'm sending an array of users
+app.post('/update', update)
