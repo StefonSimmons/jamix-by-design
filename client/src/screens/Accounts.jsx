@@ -28,7 +28,12 @@ export default function Accounts({destroyUsers}) {
 
     const handleDeleteChange = async (e) => {
         const id = e.target.id
-        setDeletedUsers(prev => ([...prev, id]))
+        setDeletedUsers(prev => {
+            if(prev.includes(id)){
+                return prev.filter(uid => uid !== id)
+            }
+            return [...prev, id]
+        })
     }
     
     const handleDelete = async () => {
@@ -74,7 +79,6 @@ export default function Accounts({destroyUsers}) {
                                 type="checkbox" 
                                 name="delete" 
                                 id={user.id} 
-                                checked={deletedUsers[user.id]}
                                 onChange={(e) => handleDeleteChange(e)}
                             />
                         </div>
