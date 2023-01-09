@@ -35,7 +35,12 @@
   margin-top: 15px;
   cursor: pointer;
   &:hover{
-      background: $goldish;
-      border: $goldish solid 1px
+    background: $goldish;
+    border: $goldish solid 1px
+  }
+  &:disabled{
+    background: $goldish;
+    border: $goldish solid 1px;
+    color: rgba(0, 0, 0, .3);
   }
 }

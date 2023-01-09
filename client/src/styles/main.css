@@ -112,6 +112,11 @@
   background: rgba(225, 201, 151, 0.7);
   border: rgba(225, 201, 151, 0.7) solid 1px;
 }
+.big-secure-btn:disabled {
+  background: rgba(225, 201, 151, 0.7);
+  border: rgba(225, 201, 151, 0.7) solid 1px;
+  color: rgba(0, 0, 0, 0.3);
+}
 
 .hamburger-menu-toggler {
   cursor: pointer;
