@@ -9,6 +9,9 @@ export default function Accounts({destroyUsers, updateUsers}) {
     const [usersData, setUsersData] = useState([]) // for updating user data and sending
     const [airtableUsers, setAirtableUsers] = useState([]) // for listing on pg only
 
+    const [submitMsg, setSubmitMsg] = useState(null)
+    const [refresh, setRefresh] = useState(false)
+
     useEffect(() => {
         const getAirtableUsers = async () => {
             const {data} = await axios.get(url, config)
@@ -24,7 +27,7 @@ export default function Accounts({destroyUsers, updateUsers}) {
             setAirtableUsers(data.records)
         }
         getAirtableUsers()
-    }, [])
+    }, [refresh])
 
 
     const getCreateAtDate = (createdAt) => {
@@ -69,22 +72,26 @@ export default function Accounts({destroyUsers, updateUsers}) {
             return [...prev, id]
         })
     }
-    
-    const handleDelete = async () => {
-        await destroyUsers(deletedUserIDs)
-    }
 
-    const handleUpdate = async () => {
-        await updateUsers(usersData)
-    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         if(updateUserIDs.length){
-            handleUpdate()
+            const status = await updateUsers(usersData)
+            if(status === 200) {
+                setSubmitMsg('Updated!')
+                setUpdateIDs([])
+                setTimeout(() => {
+                    setSubmitMsg(null)
+                }, 3000)
+            }
         }
         if(deletedUserIDs.length){
-            handleDelete()
+            const status = await destroyUsers(deletedUserIDs)
+            if(status === 204){
+                setDeletedUserIDs([])
+                setRefresh(prev => !prev)
+            }
         }
     }
 
@@ -125,6 +132,7 @@ export default function Accounts({destroyUsers, updateUsers}) {
                                     type="checkbox" 
                                     name="delete" 
                                     id={user.id} 
+                                    checked={deletedUserIDs.includes(user.id)}
                                     onChange={(e) => handleDeleteChange(e)}
                                 />
                             </div>
@@ -132,7 +140,7 @@ export default function Accounts({destroyUsers, updateUsers}) {
                         </div>
                     )
                 })}
-                <input className="big-secure-btn" type="submit" value="Submit" disabled={!updateUserIDs.length && !deletedUserIDs.length}/>
+                <input className={`big-secure-btn`} type="submit" value={`${submitMsg || 'Submit' }`} disabled={!updateUserIDs.length && !deletedUserIDs.length}/>
             </form>
         </div>
     )

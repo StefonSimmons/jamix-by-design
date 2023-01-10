@@ -954,10 +954,13 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.accounts-screen .account .checkbox-container label {
+  cursor: pointer;
+}
 .accounts-screen .account .checkbox-container input[type=checkbox] {
-  margin-left: 5px;
-  position: relative;
-  top: 2px;
+  margin-left: 7px;
+  width: 18px;
+  height: 18px;
 }
 .accounts-screen .account .account-date {
   margin-left: 5px;
