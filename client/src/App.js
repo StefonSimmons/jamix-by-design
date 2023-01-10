@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navigate, Route, Routes, useNavigate } from "react-router";
+import { Route, Routes, useNavigate } from "react-router";
 import Layout from "./layout/Layout";
 import About from "./screens/About";
 import Home from "./screens/Home";
@@ -19,6 +19,8 @@ import {register, login, verify, destroyUsers, updateUsers} from './services/aut
 function App() {
   const navigate = useNavigate()
 
+  const [refresh, setRefresh] = useState(false)
+
   // FOR GALLERY
   const [airtablePhotos, setAirtablePhotos] = useState([])
 
@@ -31,12 +33,13 @@ function App() {
 
   // FOR AUTHENTICATION
   const [user, setUser] = useState(null)
-  const [refresh, setRefresh] = useState(false)
+  
   const logout = () => {
     localStorage.removeItem('token')
     navigate('/')
     setRefresh(prev => !prev)
   } 
+
   useEffect(() => {
     const reAuthenticateUser = async () => {
       const res = await verify()
@@ -45,13 +48,6 @@ function App() {
     reAuthenticateUser()
   }, [refresh])
 
-  const routeUser = () => {
-    if(user.isOwner){
-      return <Accounts destroyUsers={destroyUsers} updateUsers={updateUsers}/>
-    }else if(user.isAdmin){
-      return <Navigate to="/about"/>
-    }
-  }
 
   return (
     <>
@@ -68,7 +64,7 @@ function App() {
           />
           <Route exact path="/jamix-admin/login" element={<Login login={login} setUser={setUser}/>}/>
           <Route exact path="/jamix-admin/register" element={<Register register={register} setUser={setUser}/>}/>
-          <Route exact path="/jamix-admin/accounts" element={user && routeUser()}/>
+          <Route exact path="/jamix-admin/accounts" element={<Accounts destroyUsers={destroyUsers} updateUsers={updateUsers} user={user}/>}/>
         </Routes>
           
         {/* Non-routes */}

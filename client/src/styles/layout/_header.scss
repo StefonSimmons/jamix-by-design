@@ -29,7 +29,7 @@ header {
     display: flex;
     text-transform: uppercase;
     grid-column: 3;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     span{
       margin-right: 5px;

@@ -46,6 +46,8 @@ export const verify = async () => {
             }
             const res = await api.get('/verify', header)
             return res.data
+        }else{
+            return null
         }
     } catch (e) {
         console.error(e.response.data)

@@ -1,8 +1,10 @@
 import axios from 'axios'
 import {useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import {url, config} from '../services/apiConfig'
 
-export default function Accounts({destroyUsers, updateUsers}) {
+export default function Accounts({destroyUsers, updateUsers, user}) {
+    const navigate = useNavigate()
     const [updateUserIDs, setUpdateIDs] = useState([]) // to track updated records
     const [deletedUserIDs, setDeletedUserIDs] = useState([]) // to track deleted record
 
@@ -95,6 +97,9 @@ export default function Accounts({destroyUsers, updateUsers}) {
         }
     }
 
+    if(!user || user.isAdmin){
+        navigate('/')
+    } 
     return (
         <div className="accounts-screen">
             <h1>Accounts</h1>
