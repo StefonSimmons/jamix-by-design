@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router";
 import Layout from "./layout/Layout";
 import About from "./screens/About";
 import Home from "./screens/Home";
@@ -38,34 +38,32 @@ function App() {
     reAuthenticateUser()
   }, [])
 
+  const routeUser = () => {
+    if(user.isOwner){
+      return <Accounts destroyUsers={destroyUsers} updateUsers={updateUsers}/>
+    }else if(user.isAdmin){
+      return <Navigate to="/about"/>
+    }
+  }
+
   return (
     <>
       <Layout setMenuModal={setMenuModal}>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/contact">
-          <Contact />
-        </Route>
-        <Route exact path="/services">
-          <Services />
-        </Route>
-        <Route exact path="/gallery">
-          <Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos} />
-        </Route>
-        <Route exact path="/jamix-admin/login">
-          <Login login={login} setUser={setUser}/>
-        </Route>
-        <Route exact path="/jamix-admin/register">
-          <Register register={register} setUser={setUser}/>
-        </Route>
-        <Route exact path="/jamix-admin/accounts">
-          <Accounts destroyUsers={destroyUsers} updateUsers={updateUsers}/>
-        </Route>
-        
+      
+        <Routes>
+          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/about" element={<About />}/>
+          <Route exact path="/contact" element={<Contact />}/>
+          <Route exact path="/services" element={<Services />}/>
+          <Route 
+            exact path="/gallery" 
+            element={<Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos} />}
+          />
+          <Route exact path="/jamix-admin/login" element={<Login login={login} setUser={setUser}/>}/>
+          <Route exact path="/jamix-admin/register" element={<Register register={register} setUser={setUser}/>}/>
+          <Route exact path="/jamix-admin/accounts" element={user && routeUser()}/>
+        </Routes>
+          
         {/* Non-routes */}
         <GalleryCarousel
           setIndex={setIndex}

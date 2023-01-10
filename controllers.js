@@ -43,7 +43,7 @@ const login = (req, res) => {
     const { email, password } = req.body
 
     base('users').select({
-        view: 'Grid view'
+        view: 'Gridview'
     }).firstPage(async (err, records) => {
         if (err) {
             console.error(err);

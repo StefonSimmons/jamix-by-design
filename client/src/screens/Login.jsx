@@ -1,8 +1,9 @@
 import {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Login({ login, setUser }) {
 
+    const navigate = useNavigate()
     const [userCred, setUserCred] = useState({
         email: null,
         password: null
@@ -12,6 +13,7 @@ export default function Login({ login, setUser }) {
         e.preventDefault()
         const res = await login(userCred)
         setUser(res)
+        navigate('/jamix-admin/accounts')
     }
 
     const handleChange = (e) => {
