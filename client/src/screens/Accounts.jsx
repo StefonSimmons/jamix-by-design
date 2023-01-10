@@ -40,6 +40,7 @@ export default function Accounts({destroyUsers, updateUsers}) {
             }
             return [...prev, userId]
         })
+        
         setUsersData(prev => {
             return prev.map(u => {
                 if(userId === u.id){
@@ -47,7 +48,9 @@ export default function Accounts({destroyUsers, updateUsers}) {
                         id: u.id,
                         fields: {
                             ...u.fields,
-                            [name]: !u.fields[name]
+                            isAdmin: false,
+                            isOwner: false,
+                            [name]: !u.fields[name],
                         }
                     }
                 }else{
@@ -129,9 +132,7 @@ export default function Accounts({destroyUsers, updateUsers}) {
                         </div>
                     )
                 })}
-                <input className="big-secure-btn" type="submit" value="Submit" 
-                // disabled={!updateUserIDs.length && !deletedUserIDs.length}
-                />
+                <input className="big-secure-btn" type="submit" value="Submit" disabled={!updateUserIDs.length && !deletedUserIDs.length}/>
             </form>
         </div>
     )
