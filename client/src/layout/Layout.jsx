@@ -6,6 +6,8 @@ export default function Layout(props) {
     <div className="app-layout">
       <Header
         setMenuModal={props.setMenuModal}
+        user={props.user}
+        logout={props.logout}
       />
       {props.children}
       <Footer/>

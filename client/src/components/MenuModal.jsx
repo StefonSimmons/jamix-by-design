@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import close from "../assets/close-icon.svg"
 
 
-export default function MenuModal({ menuModal, setMenuModal }) {
+export default function MenuModal({ menuModal, setMenuModal, user, logout }) {
   return (
     <Fragment>
       {menuModal &&
@@ -15,6 +15,8 @@ export default function MenuModal({ menuModal, setMenuModal }) {
             <Link to="/gallery" onClick={() => setMenuModal(false)}><li>Gallery</li></Link>
             <Link to="/services" onClick={() => setMenuModal(false)}><li>Services</li></Link>
             <Link to="/contact" onClick={() => setMenuModal(false)}><li>Contact</li></Link>
+            {user && <button onClick={logout}>Logout</button>}
+
           </ul>
         </div >
       }

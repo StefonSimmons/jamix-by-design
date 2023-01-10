@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navigate, Route, Routes } from "react-router";
+import { Navigate, Route, Routes, useNavigate } from "react-router";
 import Layout from "./layout/Layout";
 import About from "./screens/About";
 import Home from "./screens/Home";
@@ -17,6 +17,7 @@ import "./styles/main.css"
 import {register, login, verify, destroyUsers, updateUsers} from './services/auth'
 
 function App() {
+  const navigate = useNavigate()
 
   // FOR GALLERY
   const [airtablePhotos, setAirtablePhotos] = useState([])
@@ -30,13 +31,19 @@ function App() {
 
   // FOR AUTHENTICATION
   const [user, setUser] = useState(null)
+  const [refresh, setRefresh] = useState(false)
+  const logout = () => {
+    localStorage.removeItem('token')
+    navigate('/')
+    setRefresh(prev => !prev)
+  } 
   useEffect(() => {
     const reAuthenticateUser = async () => {
       const res = await verify()
       setUser(res)
     }
     reAuthenticateUser()
-  }, [])
+  }, [refresh])
 
   const routeUser = () => {
     if(user.isOwner){
@@ -48,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Layout setMenuModal={setMenuModal}>
+      <Layout setMenuModal={setMenuModal} user={user} logout={logout}>
       
         <Routes>
           <Route exact path="/" element={<Home />}/>
@@ -75,6 +82,8 @@ function App() {
         <MenuModal
           menuModal={menuModal}
           setMenuModal={setMenuModal}
+          user={user}
+          logout={logout}
         />
 
       </Layout>

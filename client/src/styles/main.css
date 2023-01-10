@@ -202,11 +202,32 @@ header {
 header img {
   width: 258px;
   height: 168px;
+  grid-column: 2;
 }
 @media (max-width: 768px) {
   header img {
     width: 174px;
     height: 117px;
+    grid-column: 1;
+  }
+}
+header .admin-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+header .admin-greeting {
+  display: flex;
+  text-transform: uppercase;
+  grid-column: 3;
+  justify-content: end;
+  align-items: center;
+}
+header .admin-greeting span {
+  margin-right: 5px;
+}
+@media (max-width: 768px) {
+  header .admin-greeting {
+    display: none;
   }
 }
 header nav {
