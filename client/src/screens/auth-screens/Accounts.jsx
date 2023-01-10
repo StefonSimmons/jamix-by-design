@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import {url, config} from '../services/apiConfig'
+import {url, config} from '../../services/apiConfig'
 
 export default function Accounts({destroyUsers, updateUsers, user}) {
     const navigate = useNavigate()
