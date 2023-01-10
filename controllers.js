@@ -79,24 +79,24 @@ const verify = (req, res) => {
 // DESTROY USER
 const destroy = (req, res) => {
     const {usersIDs} = req.body
-    base('users').destroy(usersIDs, (err) => {
+    base('users').destroy(usersIDs, (err, records) => {
         if (err) {
           console.error(err.message);
           return;
         }
-        res.status(204)
+        res.status(204).json(records)
     });
 }
 
 // UPDATE USER
 const update = (req, res) => {
     const {users} = req.body 
-    base('users').update(users, function(err) {
+    base('users').update(users, function(err, records) {
         if (err) {
           console.error(err);
           return;
         }
-        res.status(200)
+        res.status(200).json(records)
     });
 }
 
