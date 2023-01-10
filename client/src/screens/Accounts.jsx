@@ -36,7 +36,7 @@ export default function Accounts({destroyUsers, updateUsers}) {
         const {name, dataset: {userId}} = e.target
         setUpdateIDs(prev => {
             if(prev.includes(userId)){
-                return prev.filter(uid => uid !== userId)
+                return prev
             }
             return [...prev, userId]
         })
@@ -129,7 +129,9 @@ export default function Accounts({destroyUsers, updateUsers}) {
                         </div>
                     )
                 })}
-                <input className="big-secure-btn" type="submit" value="Submit" disabled={!updateUserIDs.length && !deletedUserIDs.length}/>
+                <input className="big-secure-btn" type="submit" value="Submit" 
+                // disabled={!updateUserIDs.length && !deletedUserIDs.length}
+                />
             </form>
         </div>
     )
