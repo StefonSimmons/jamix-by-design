@@ -139,6 +139,9 @@
         background-color: $goldish;
         box-shadow: 5px 5px 5px 0px black;
       }
+      &.preview{
+        box-shadow: inset 0px 0px 15px 5px rgb(11, 166, 11);
+      }
       @media(max-width: $m-screen){
         margin: 15px 0;
       }

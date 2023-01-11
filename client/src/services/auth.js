@@ -1,8 +1,5 @@
-import axios from "axios";
+import { api } from "./apiConfig"
 
-const api = axios.create({
-    baseURL: "http://localhost:3001"
-})
 
 export const login = async (credentials) => {
     try {

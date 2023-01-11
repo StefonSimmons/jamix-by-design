@@ -758,6 +758,9 @@ footer {
   background-color: rgba(225, 201, 151, 0.7);
   box-shadow: 5px 5px 5px 0px black;
 }
+.services-screen .packages .package-card.preview {
+  box-shadow: inset 0px 0px 15px 5px rgb(11, 166, 11);
+}
 @media (max-width: 768px) {
   .services-screen .packages .package-card {
     margin: 15px 0;

@@ -8,10 +8,12 @@ import Services from "./screens/Services"
 import Gallery from "./screens/Gallery"
 import GalleryCarousel from "./components/GalleryCarousel";
 import MenuModal from "./components/MenuModal";
+import Packages from "./components/Packages";
 
-import Login from "./screens/Login";
-import Register from "./screens/Register";
-import Accounts from "./screens/Accounts";
+// Auth Screens
+import Login from "./screens/auth-screens/Login";
+import Register from "./screens/auth-screens/Register";
+import Accounts from "./screens/auth-screens/Accounts";
 
 import "./styles/main.css"
 import {register, login, verify, destroyUsers, updateUsers} from './services/auth'
@@ -57,14 +59,17 @@ function App() {
           <Route exact path="/" element={<Home />}/>
           <Route exact path="/about" element={<About />}/>
           <Route exact path="/contact" element={<Contact />}/>
-          <Route exact path="/services" element={<Services />}/>
+          <Route exact path="/services" element={<Services><Packages/></Services>}/>
           <Route 
             exact path="/gallery" 
             element={<Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos} />}
           />
+
+          {/* Auth Routes */}
           <Route exact path="/jamix-admin/login" element={<Login login={login} setUser={setUser}/>}/>
           <Route exact path="/jamix-admin/register" element={<Register register={register} setUser={setUser}/>}/>
           <Route exact path="/jamix-admin/accounts" element={<Accounts destroyUsers={destroyUsers} updateUsers={updateUsers} user={user}/>}/>
+          <Route exact path="/jamix-admin/services" element={<Services><Packages restricted={true}/></Services>}/>
         </Routes>
           
         {/* Non-routes */}
@@ -85,7 +90,6 @@ function App() {
       </Layout>
       {/* <iframe className="airtable-embed" src="https://airtable.com/embed/shrLIQhC3NM19VGtV?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe> */}
       {/* <iframe className="airtable-embed" src="https://airtable.com/embed/shrqgKj7juCAXE8kO?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe> */}
-      <iframe className="airtable-embed" src="https://airtable.com/embed/shr9jRgZMKBIHOsyl?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
       
       </>
   );

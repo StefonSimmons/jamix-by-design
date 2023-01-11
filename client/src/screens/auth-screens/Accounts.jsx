@@ -1,7 +1,6 @@
-import axios from 'axios'
 import {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import {url, config} from '../../services/apiConfig'
+import {atAPI, config} from '../../services/apiConfig'
 
 export default function Accounts({destroyUsers, updateUsers, user}) {
     const navigate = useNavigate()
@@ -16,7 +15,7 @@ export default function Accounts({destroyUsers, updateUsers, user}) {
 
     useEffect(() => {
         const getAirtableUsers = async () => {
-            const {data} = await axios.get(url, config)
+            const {data} = await atAPI.get("/users/?view=Gridview&fields%5B%5D=email&fields%5B%5D=isOwner&fields%5B%5D=isAdmin", config)
             const modifiedUsers = data.records.map(u => ({
                 "id": u.id,
                 "fields": {
