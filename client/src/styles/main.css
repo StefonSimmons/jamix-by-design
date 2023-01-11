@@ -134,6 +134,30 @@
   transition: all 0.25s;
 }
 
+.mobile-menu-user-btn {
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-menu-user-btn {
+    display: flex;
+    align-items: center;
+    border: black solid 2px;
+  }
+}
+.mobile-menu-user-btn span {
+  margin-right: 8px;
+}
+.mobile-menu-user-btn .down-arrow {
+  border-left: solid black 2px;
+  border-bottom: solid black 2px;
+  transform: rotate(-45deg);
+  width: 10px;
+  height: 10px;
+  position: relative;
+  top: -1px;
+}
+
 .menu-modal {
   -webkit-animation: fade-in 0.5s ease-in-out;
           animation: fade-in 0.5s ease-in-out;

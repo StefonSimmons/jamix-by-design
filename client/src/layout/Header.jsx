@@ -20,6 +20,7 @@ export default function Header({setMenuModal, user, logout}) {
         {user && <button onClick={logout}>Logout</button>}
       </nav>
       {/* Mobile Menu */}
+      {!user ?
       <div
         className="hamburger-menu-toggler"
         onClick={() => setMenuModal(true)}
@@ -28,6 +29,13 @@ export default function Header({setMenuModal, user, logout}) {
         <div className="hamburger-menu-bar"></div>
         <div className="hamburger-menu-bar"></div>
       </div>
+      :
+      <button className="mobile-menu-user-btn" onClick={() => setMenuModal(true)}>
+        <span>{user.email.split('@')[0]}</span>
+        <div className="down-arrow">
+        </div>
+      </button>
+      }
     </header>
   )
 }
