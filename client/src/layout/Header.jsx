@@ -8,7 +8,15 @@ export default function Header({setMenuModal, user, logout}) {
     <header>
       <div className={`${user ? 'admin-container': ''}`}>
         <img src={jamixLogo} alt="jamix-logo" />
-        {user && <p className="admin-greeting"><span>Hi,</span>{user.email.split('@')[0]}</p>}
+          {user && (
+          <div className="admin-greeting">
+              <p ><span>Hi,</span>{user.email.split('@')[0]}</p>
+              <Link to="/jamix-admin/home">home</Link>
+              <Link to="/jamix-admin/gallery">galllery</Link>
+              <Link to="/jamix-admin/services">services</Link>
+              <Link to="/jamix-admin/accounts">accounts</Link>
+          </div>
+          )}
       </div>
       {/* Destop / Tablet Menu */}
       <nav>
