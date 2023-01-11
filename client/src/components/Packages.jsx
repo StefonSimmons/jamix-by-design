@@ -1,12 +1,15 @@
 import { atAPI , config} from "../services/apiConfig"
 import { useState, useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
 
-export default function Packages({restricted}) {
+
+export default function Packages({restricted, user}) {
     const [refresh, setRefresh] = useState()
     const [isOpen, setToggle] = useState({})
 
     const [packageData, setPackageData] = useState([])
     const [airtablePackages, setAirtablePackages] = useState([])
+
     useEffect(() => {
         const getAirtablePackages = async () => {
             const {data} = await atAPI.get("/packages/?view=Gridview", config)
@@ -37,6 +40,7 @@ export default function Packages({restricted}) {
 
 
     // EDITTING STUFF
+    const navigate = useNavigate()
     const [editID, activateEditID] = useState(null)
     const [previewIDs, activatePreviewIDs] = useState([])
 
@@ -79,6 +83,10 @@ export default function Packages({restricted}) {
             setRefresh(prev => !prev)
         }
     }
+
+    if(!user){
+        navigate('/')
+    } 
 
     return (
         <>
