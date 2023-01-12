@@ -146,7 +146,7 @@ export default function Accounts({destroyUsers, updateUsers, user, restricted}) 
                                     onChange={(e) => handleDeleteChange(e)}
                                 />
                             </div>
-                            <p>created at:<span className="account-date">{getCreateAtDate(user.createdTime)}</span></p>
+                            <p>created on:<span className="account-date">{getCreateAtDate(user.createdTime)}</span></p>
                         </div>
                     )
                 })}
