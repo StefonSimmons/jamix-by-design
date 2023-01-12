@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { atAPI, config } from '../services/apiConfig'
 import { useEffect } from 'react'
 import { gallery } from '../import-info/gallery'
 
@@ -8,13 +8,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
 
   useEffect(() => {
     const getAirtablePhotos = async () => {
-      const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/gallery/?view=Grid view`
-      const config = {
-        headers: {
-          "Authorization": `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-        }
-      }
-      const {data} = await axios.get(url, config)
+      const {data} = await atAPI.get("/gallery/?view=Gridview", config)
 
       const photoObjs = data.records.reduce((acc, record) => {
         acc.push(...record.fields.photo)
@@ -47,7 +41,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
         })}
       </section>
       <div style={{borderTop: "solid black 2px"}}>
-        <iframe className="airtable-embed" src="https://airtable.com/embed/shrIwCRb7zRzmzD3l?backgroundColor=red" frameBorder="0" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
+        <iframe className="airtable-embed" src="https://airtable.com/embed/shrIwCRb7zRzmzD3l" frameBorder="0" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
       </div>
     </div>
   )

@@ -250,9 +250,16 @@ header .admin-greeting p {
   text-transform: uppercase;
 }
 header .admin-greeting a {
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: underline;
   color: blue;
+  transition: all 0.25s ease-in;
+  padding: 0 5px;
+}
+header .admin-greeting a:hover {
+  background-color: rgba(33, 162, 243, 0.472);
+  border-radius: 3px;
+  color: black;
 }
 header .admin-greeting span {
   margin-right: 5px;
