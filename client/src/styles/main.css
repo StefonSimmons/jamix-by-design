@@ -956,6 +956,13 @@ footer {
   border: rgba(0, 0, 0, 0.7) 3px solid;
   color: rgb(44, 47, 47);
 }
+.gallery-screen .get-pic-container {
+  display: flex;
+  justify-content: center;
+}
+.gallery-screen .get-pic-container .get-pics-btn {
+  margin-bottom: 15px;
+}
 
 .login-screen, .register-screen {
   height: 768px;

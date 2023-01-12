@@ -1,8 +1,9 @@
 import { atAPI, config } from '../services/apiConfig'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { gallery } from '../import-info/gallery'
 
-export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, setAirtablePhotos }) {
+export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, setAirtablePhotos, restricted, user }) {
 
   const [photoData, setPhotoData] = useState([])
   const [refresh, setRefresh] = useState(false)
@@ -13,7 +14,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
       const {data} = await atAPI.get("/gallery/?view=Gridview", config)
 
       const modifiedPhotoObjs = data.records.reduce((acc, record) => {
-        const modifiedPhotos = record.fields.photos.map((photo, idx, arr) => ({...photo, recordID: record.id}))
+        const modifiedPhotos = record.fields.photos.map((photo) => ({...photo, recordID: record.id}))
         acc.push(...modifiedPhotos)
         return acc
       }, [])
@@ -27,16 +28,14 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
 
 
   // DELETE STUFF
+  const navigate = useNavigate()
   const [hoveredPhotoID, setHoveredID] = useState(null)
-  const handleOverlay = (e) =>{
-    setHoveredID(e.target.id)
-  }
 
   const handleDelete = async (e, recordID, attID) => {
     e.stopPropagation()
     const oneRecord = photoData.find(p => p.id === recordID)
     if(oneRecord.fields.photos.length > 1){
-      // this is really an update to the record
+      // this is really an update to the record. deletes attachements
       const recordData = {
         fields: {
           // exclude selected attachement(photo) id
@@ -48,14 +47,17 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
         setRefresh(prev => !prev)
       }
     } else if (oneRecord.fields.photos.length === 1){
-      // this deletes if record only has one attachment left 
+      // this deletes the record if record only has one attachment left 
       const {status} = await atAPI.delete(`/gallery/${recordID}`, config)
       if(status === 200){
         setRefresh(prev => !prev)
       }
     }
-
   }
+
+  if(restricted && !user){
+    navigate('/')
+  } 
 
   return (
     <div className="gallery-screen">
@@ -70,21 +72,30 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
                 setIndex(idx)
                 setGalleryModal(true)
               }}
-              onMouseEnter={handleOverlay}
-              onMouseLeave={() => setHoveredID(null)}
+              onMouseEnter={(e) => restricted && setHoveredID(e.target.id)}
+              onMouseLeave={() => restricted && setHoveredID(null)}
               style={{ backgroundImage: `url(${photo.url || photo})` }}
               >
+              { restricted &&
               <div className={`overlay-delete ${(hoveredPhotoID === photo.id) || (hoveredPhotoID === idx) ? "hovered": "unhovered"}`}>
                 <button onClick={(e) => handleDelete(e,photo.recordID, photo.id)}>Delete</button>
               </div>
+              }
               </div>
             </div>
           )
         })}
       </section>
+      { restricted &&
+        <div className='get-pic-container'>
+          <button className="get-pics-btn big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Get New Pics</button>
+        </div>
+      }
+      { restricted &&
       <div style={{borderTop: "solid black 2px"}}>
         <iframe className="airtable-embed" src="https://airtable.com/embed/shrIwCRb7zRzmzD3l" frameBorder="0" width="100%" height="533" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
       </div>
+      }
     </div>
   )
 }

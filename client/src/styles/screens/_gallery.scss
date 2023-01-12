@@ -53,6 +53,13 @@
       }
     }
   }
+  .get-pic-container{
+    display: flex;
+    justify-content: center;
+    .get-pics-btn{
+      margin-bottom: 15px;
+    }
+  }
 }
 
 
