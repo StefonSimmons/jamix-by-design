@@ -84,7 +84,7 @@ export default function Packages({restricted, user}) {
         }
     }
 
-    if(!user){
+    if(restricted && !user){
         navigate('/')
     } 
 
