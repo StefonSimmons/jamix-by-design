@@ -16,7 +16,7 @@ a{
 }
 
 .restricted-screen{
-  border: 4px dotted rgb(255, 0, 0);
-  box-shadow:inset 0 0 17px 2px red;
+  border: 4px solid $goldish;
+  box-shadow:inset 0 0 10px 2px $gold;
   padding: 15px
 }

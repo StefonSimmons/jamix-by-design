@@ -1035,12 +1035,23 @@ footer {
   padding: 15px;
   border: black solid 1px;
   margin-bottom: 30px;
+  overflow-y: scroll;
+}
+@media (max-width: 992px) {
+  .accounts-screen .accounts-form {
+    width: 360px;
+  }
 }
 .accounts-screen .account {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   border-bottom: #B3B3B3 solid 1px;
   padding: 10px 0;
+}
+@media (max-width: 992px) {
+  .accounts-screen .account {
+    grid-template-columns: 4fr;
+  }
 }
 .accounts-screen .account p {
   margin: 0;
@@ -1052,6 +1063,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 992px) {
+  .accounts-screen .account .checkbox-container {
+    justify-content: flex-start;
+  }
 }
 .accounts-screen .account .checkbox-container label {
   cursor: pointer;
@@ -1084,7 +1100,7 @@ a {
 }
 
 .restricted-screen {
-  border: 4px dotted rgb(255, 0, 0);
-  box-shadow: inset 0 0 17px 2px red;
+  border: 4px solid rgba(225, 201, 151, 0.7);
+  box-shadow: inset 0 0 10px 2px #E1C997;
   padding: 15px;
 }/*# sourceMappingURL=main.css.map */
