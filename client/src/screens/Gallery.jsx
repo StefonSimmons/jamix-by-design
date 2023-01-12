@@ -60,7 +60,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
   } 
 
   return (
-    <div className="gallery-screen">
+    <div className={`gallery-screen ${restricted && "restricted-screen"}`}>
       <section className="gallery">
         {[...gallery, ...airtablePhotos].map((photo, idx) => {
           return (

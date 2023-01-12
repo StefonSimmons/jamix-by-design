@@ -106,7 +106,7 @@ export default function Accounts({destroyUsers, updateUsers, user, restricted}) 
         )
     }
     return (
-        <div className="accounts-screen">
+        <div className={`accounts-screen ${restricted && "restricted-screen"}`}>
             <h1>Accounts</h1>
             <form className="accounts-form" onSubmit={handleSubmit}>
                 {airtableUsers.map((user, idx) => {

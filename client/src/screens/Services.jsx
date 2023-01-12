@@ -2,13 +2,13 @@ import { Fragment } from "react"
 import Service from "../components/Service"
 import { services } from "../import-info/services"
 
-export default function Services({children}) {
+export default function Services({children, restricted}) {
 
   
 
 
   return (
-    <div className="services-screen">
+    <div className={`services-screen ${restricted && "restricted-screen"}`}>
       <h1>Let’s Work On Your Next Celebration!</h1>
       <section className="services-section">
         {services.map((service, idx) => (
