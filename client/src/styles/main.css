@@ -1065,6 +1065,9 @@ footer {
   margin-left: 5px;
   font-weight: 700;
 }
+.accounts-screen .account.to-delete {
+  color: rgba(0, 0, 0, 0.3);
+}
 
 .no-access {
   margin: 80px 30px;

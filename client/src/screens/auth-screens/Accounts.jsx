@@ -112,7 +112,7 @@ export default function Accounts({destroyUsers, updateUsers, user, restricted}) 
                 {airtableUsers.map((user, idx) => {
                     const userData = usersData.find(u => u?.id === user?.id)
                     return (
-                        <div key={idx} className="account">
+                        <div key={idx} className={`account ${deletedUserIDs.includes(user.id) && "to-delete"}`}>
                             <p className="account-email">{user.fields.email}</p>
                             <div className="checkbox-container">
                                 <label htmlFor={`is-owner-${user.id}`}>Owner Access</label>
