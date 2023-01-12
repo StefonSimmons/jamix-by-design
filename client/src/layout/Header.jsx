@@ -14,7 +14,7 @@ export default function Header({setMenuModal, user, logout}) {
               <Link to="/jamix-admin/home">home</Link>
               <Link to="/jamix-admin/gallery">gallery</Link>
               <Link to="/jamix-admin/services">services</Link>
-              <Link to="/jamix-admin/accounts">accounts</Link>
+              {user.isOwner && <Link to="/jamix-admin/accounts">accounts</Link>}
           </div>
           )}
       </div>

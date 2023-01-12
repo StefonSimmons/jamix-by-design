@@ -1066,6 +1066,11 @@ footer {
   font-weight: 700;
 }
 
+.no-access {
+  margin: 80px 30px;
+  text-align: center;
+}
+
 body {
   font-family: "Reem Kufi", sans-serif;
 }
