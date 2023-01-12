@@ -70,6 +70,7 @@ function App() {
           <Route exact path="/jamix-admin/register" element={<Register register={register} setUser={setUser}/>}/>
           <Route exact path="/jamix-admin/accounts" element={<Accounts destroyUsers={destroyUsers} updateUsers={updateUsers} user={user}/>}/>
           <Route exact path="/jamix-admin/services" element={<Services><Packages restricted={true} user={user}/></Services>}/>
+          <Route exact path="/jamix-admin/gallery" element={<Gallery setIndex={setIndex} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos}/>}/>
         </Routes>
           
         {/* Non-routes */}
