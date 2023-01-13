@@ -71,6 +71,7 @@ function App() {
           <Route exact path="/jamix-admin/accounts" element={<Accounts destroyUsers={destroyUsers} updateUsers={updateUsers} user={user} restricted={true}/>}/>
           <Route exact path="/jamix-admin/services" element={<Services restricted={true}><Packages restricted={true} user={user}/></Services>}/>
           <Route exact path="/jamix-admin/gallery" element={<Gallery restricted={true} setIndex={setIndex} user={user} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos}/>}/>
+          <Route exact path="/jamix-admin/home" element={<Home restricted={true}/>}/>     
         </Routes>
           
         {/* Non-routes */}
@@ -89,9 +90,9 @@ function App() {
         />
 
       </Layout>
+      {/* About */}
       {/* <iframe className="airtable-embed" src="https://airtable.com/embed/shrLIQhC3NM19VGtV?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe> */}
-      {/* <iframe className="airtable-embed" src="https://airtable.com/embed/shrqgKj7juCAXE8kO?backgroundColor=red" frameBorder="0" width="100%" height="1000px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe> */}
-      
+
       </>
   );
 }

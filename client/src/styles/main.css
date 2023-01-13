@@ -324,6 +324,9 @@ footer {
     opacity: 1;
   }
 }
+.home-screen.restricted-screen {
+  height: 2250px;
+}
 @media (max-width: 992px) {
   .home-screen {
     padding: 0 60px;
