@@ -121,10 +121,10 @@ export default function Packages({restricted}) {
                 <button className="packages-live-btn" onClick={handleSubmit}>Go Live</button>
                 <iframe className="airtable-embed" src="https://airtable.com/embed/shr9jRgZMKBIHOsyl" frameBorder="0" width="100%" height="700px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
             </>
-                :
-                <ul className="packages">
-                {airtablePackages.map((service, idx) => {
-                    return service.fields.isLive && (
+            :
+            <ul className="packages">
+                {airtablePackages?.map((service, idx) => {
+                    return (
                     <li key={idx} className={`package-card ${isOpen[service.fields.name] ? 'open' : 'close'}`} onClick={() => togglePackageCard(service.fields.name)} >
                         <div className="package-header">
                             <h3>{service.fields.name}</h3>
