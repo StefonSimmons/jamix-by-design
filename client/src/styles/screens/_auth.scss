@@ -45,5 +45,15 @@
             margin-top: 60px;
             text-align: center;
         } 
+
+        .loader{
+            border: solid grey 6px;
+            border-top: solid rgba(0, 0, 0, 0.525) 6px;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto;
+            border-radius: 50%;
+            @include spin-animation
+        }
     }
 }

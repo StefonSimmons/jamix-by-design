@@ -10,9 +10,13 @@ export default function Login({ login, setUser }) {
     })
     const [unauthorized, setUnauthorized] = useState(null)
     
+    const [load, setLoad] = useState(false)
+
     const getUser = async (e) => {
         e.preventDefault()
+        setLoad(true)
         const res = await login(userCred)
+        res && setLoad(false)
         if(res.email){
             setUnauthorized(null)
             setUser(res)
@@ -42,8 +46,12 @@ export default function Login({ login, setUser }) {
             <form className="login-form" onSubmit={(e) => getUser(e)}>
                 <input className={unauthorized} type="text" name="email" placeholder="Email" onChange={(e) => handleChange(e)}/>
                 <input className={unauthorized} type="password" name="password" placeholder="Password" onChange={(e) => handleChange(e)}/>
-                <input className="big-secure-btn" type="submit" value="Login" />
-                <p className={unauthorized}>incorrect email and/or password</p>
+                { !load ? 
+                    <input className="big-secure-btn" type="submit" value="Login" />
+                    :
+                    <button className='big-secure-btn'><div className="loader"></div></button>
+                }
+                <p className={unauthorized}>Incorrect email and/or password</p>
                 <Link to="/jamix-admin/register">
                     Create Account
                 </Link>

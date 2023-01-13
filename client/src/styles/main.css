@@ -1046,6 +1046,32 @@ footer {
   margin-top: 60px;
   text-align: center;
 }
+.login-screen .login-form .loader, .login-screen .register-form .loader, .register-screen .login-form .loader, .register-screen .register-form .loader {
+  border: solid grey 6px;
+  border-top: solid rgba(0, 0, 0, 0.525) 6px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  border-radius: 50%;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .accounts-screen {
   height: 768px;
