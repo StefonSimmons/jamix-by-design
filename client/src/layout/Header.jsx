@@ -6,9 +6,9 @@ export default function Header({setMenuModal, user, logout}) {
 
   return (
     <header>
-      <div className={`${user ? 'admin-container': ''}`}>
+      <div className={`${(user?.isAdmin || user?.isOwner) ? 'admin-container': ''}`}>
         <img src={jamixLogo} alt="jamix-logo" />
-          {user && (
+          {(user?.isAdmin || user?.isOwner) && (
           <div className="admin-greeting">
               <p ><span>Hi,</span>{user.email.split('@')[0]}</p>
               <Link to="/jamix-admin/home">home</Link>

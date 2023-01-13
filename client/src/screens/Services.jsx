@@ -2,11 +2,17 @@ import { Fragment } from "react"
 import Service from "../components/Service"
 import { services } from "../import-info/services"
 
-export default function Services({children, restricted}) {
+export default function Services({children, restricted, user}) {
 
   
 
-
+  if(!user?.isAdmin && !user?.isOwner && restricted){
+    return (
+      <div className='no-access'>
+          <h1>Sorry. You do not have access to this page.</h1>
+      </div>
+    )
+  }
   return (
     <div className={`services-screen ${restricted && "restricted-screen"}`}>
       <h1>Let’s Work On Your Next Celebration!</h1>

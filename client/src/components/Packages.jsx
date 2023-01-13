@@ -1,9 +1,8 @@
 import { atAPI , config} from "../services/apiConfig"
 import { useState, useEffect } from "react"
-import { useNavigate } from 'react-router-dom'
 
 
-export default function Packages({restricted, user}) {
+export default function Packages({restricted}) {
     const [refresh, setRefresh] = useState()
     const [isOpen, setToggle] = useState({})
 
@@ -40,7 +39,6 @@ export default function Packages({restricted, user}) {
 
 
     // EDITTING STUFF
-    const navigate = useNavigate()
     const [editID, activateEditID] = useState(null)
     const [previewIDs, activatePreviewIDs] = useState([])
 
@@ -83,10 +81,6 @@ export default function Packages({restricted, user}) {
             setRefresh(prev => !prev)
         }
     }
-
-    if(restricted && !user){
-        navigate('/')
-    } 
 
     return (
         <>

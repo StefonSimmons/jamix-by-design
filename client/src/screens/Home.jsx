@@ -3,7 +3,7 @@ import { useState,  useEffect } from "react";
 // import homeFloral from "../assets/home-floral.jpg"
 import BigButton from "../components/BigButton";
 
-export default function Home({restricted}) {
+export default function Home({restricted, user}) {
 
   const [homeData, setHomeData] = useState({
     fields: {
@@ -81,7 +81,13 @@ export default function Home({restricted}) {
     }
   }
 
-
+  if(!user?.isAdmin && !user?.isOwner && restricted){
+    return (
+      <div className='no-access'>
+          <h1>Sorry. You do not have access to this page.</h1>
+      </div>
+    )
+  }
 
   return (
     <>

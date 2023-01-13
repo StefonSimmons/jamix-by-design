@@ -69,9 +69,9 @@ function App() {
           <Route exact path="/jamix-admin/login" element={<Login login={login} setUser={setUser}/>}/>
           <Route exact path="/jamix-admin/register" element={<Register register={register} setUser={setUser}/>}/>
           <Route exact path="/jamix-admin/accounts" element={<Accounts destroyUsers={destroyUsers} updateUsers={updateUsers} user={user} restricted={true}/>}/>
-          <Route exact path="/jamix-admin/services" element={<Services restricted={true}><Packages restricted={true} user={user}/></Services>}/>
+          <Route exact path="/jamix-admin/services" element={<Services restricted={true} user={user}><Packages restricted={true}/></Services>}/>
           <Route exact path="/jamix-admin/gallery" element={<Gallery restricted={true} setIndex={setIndex} user={user} setGalleryModal={setGalleryModal} airtablePhotos={airtablePhotos} setAirtablePhotos={setAirtablePhotos}/>}/>
-          <Route exact path="/jamix-admin/home" element={<Home restricted={true}/>}/>     
+          <Route exact path="/jamix-admin/home" element={<Home restricted={true} user={user}/>}/>     
         </Routes>
           
         {/* Non-routes */}

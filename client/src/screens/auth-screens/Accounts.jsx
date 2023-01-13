@@ -1,9 +1,7 @@
 import {useEffect, useState} from 'react'
-import { useNavigate } from 'react-router-dom'
 import {atAPI, config} from '../../services/apiConfig'
 
 export default function Accounts({destroyUsers, updateUsers, user, restricted}) {
-    const navigate = useNavigate()
     const [updateUserIDs, setUpdateIDs] = useState([]) // to track updated records
     const [deletedUserIDs, setDeletedUserIDs] = useState([]) // to track deleted record
 
@@ -96,13 +94,12 @@ export default function Accounts({destroyUsers, updateUsers, user, restricted}) 
         }
     }
 
-    if(!user && restricted){
-        navigate('/')
-    } else if(user.isAdmin){
+
+    if((!user?.isOwner)){
         return (
-            <div className='no-access'>
-                <h1>Sorry. You do not have access to this page.</h1>
-            </div>
+          <div className='no-access'>
+              <h1>Sorry. You do not have access to this page.</h1>
+          </div>
         )
     }
     return (

@@ -1,6 +1,5 @@
 import { atAPI, config } from '../services/apiConfig'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { gallery } from '../import-info/gallery'
 
 export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, setAirtablePhotos, restricted, user }) {
@@ -28,7 +27,6 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
 
 
   // DELETE STUFF
-  const navigate = useNavigate()
   const [hoveredPhotoID, setHoveredID] = useState(null)
 
   const handleDelete = async (e, recordID, attID) => {
@@ -55,9 +53,13 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
     }
   }
 
-  if(restricted && !user){
-    navigate('/')
-  } 
+  if(!user?.isAdmin && !user?.isOwner && restricted){
+    return (
+      <div className='no-access'>
+          <h1>Sorry. You do not have access to this page.</h1>
+      </div>
+    )
+  }
 
   return (
     <div className={`gallery-screen ${restricted && "restricted-screen"}`}>
