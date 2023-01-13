@@ -51,15 +51,19 @@ const login = (req, res) => {
         }
 
         const user = records.find(record => record.fields.email === email)
-        const isAuthorized = await bcrypt.compare(password, user.fields.passwordDigest)
-        if (isAuthorized) {
-            const payload = { email: user.fields.email, recordID: user.getId(), isOwner: user.fields.isOwner, isAdmin: user.fields.isAdmin }
-            const token = jwt.sign(payload, SECRET_KEY)
-
-            delete user.fields.passwordDigest
-            res.json({ ...user.fields, recordID: user.getId(), token })
-            // .setHeader('Set-Cookie', `token=${token}; Max-Age=${exp}`)
-        } else {
+        if(user){
+            const isAuthorized = await bcrypt.compare(password, user.fields.passwordDigest)
+            if (isAuthorized) {
+                const payload = { email: user.fields.email, recordID: user.getId(), isOwner: user.fields.isOwner, isAdmin: user.fields.isAdmin }
+                const token = jwt.sign(payload, SECRET_KEY)
+                
+                delete user.fields.passwordDigest
+                res.json({ ...user.fields, recordID: user.getId(), token })
+                // .setHeader('Set-Cookie', `token=${token}; Max-Age=${exp}`)
+            } else {
+                res.status(401).json({ error: 'Unauthorized' })
+            }
+        }else{
             res.status(401).json({ error: 'Unauthorized' })
         }
     });

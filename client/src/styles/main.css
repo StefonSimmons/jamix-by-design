@@ -1001,6 +1001,19 @@ footer {
 .login-screen .login-form input[type=text]::placeholder, .login-screen .login-form input[type=password]::placeholder, .login-screen .register-form input[type=text]::placeholder, .login-screen .register-form input[type=password]::placeholder, .register-screen .login-form input[type=text]::placeholder, .register-screen .login-form input[type=password]::placeholder, .register-screen .register-form input[type=text]::placeholder, .register-screen .register-form input[type=password]::placeholder {
   text-transform: uppercase;
 }
+.login-screen .login-form input[type=text].unauthorized, .login-screen .login-form input[type=password].unauthorized, .login-screen .register-form input[type=text].unauthorized, .login-screen .register-form input[type=password].unauthorized, .register-screen .login-form input[type=text].unauthorized, .register-screen .login-form input[type=password].unauthorized, .register-screen .register-form input[type=text].unauthorized, .register-screen .register-form input[type=password].unauthorized {
+  box-shadow: 0 0 2px 2px red;
+}
+.login-screen .login-form p, .login-screen .register-form p, .register-screen .login-form p, .register-screen .register-form p {
+  display: none;
+}
+.login-screen .login-form p.unauthorized, .login-screen .register-form p.unauthorized, .register-screen .login-form p.unauthorized, .register-screen .register-form p.unauthorized {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: red;
+}
 .login-screen .login-form a, .login-screen .register-form a, .register-screen .login-form a, .register-screen .register-form a {
   margin-top: 60px;
   text-align: center;

@@ -13,7 +13,7 @@ export const login = async (credentials) => {
         return null
     } catch (e) {  
         console.error(e.response.data)
-        return null 
+        return e.response.data 
     }
 }
 
