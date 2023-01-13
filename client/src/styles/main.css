@@ -1001,17 +1001,6 @@ footer {
 .login-screen .login-form input[type=text]::placeholder, .login-screen .login-form input[type=password]::placeholder, .login-screen .register-form input[type=text]::placeholder, .login-screen .register-form input[type=password]::placeholder, .register-screen .login-form input[type=text]::placeholder, .register-screen .login-form input[type=password]::placeholder, .register-screen .register-form input[type=text]::placeholder, .register-screen .register-form input[type=password]::placeholder {
   text-transform: uppercase;
 }
-.login-screen .login-form .is-owner-section, .login-screen .register-form .is-owner-section, .register-screen .login-form .is-owner-section, .register-screen .register-form .is-owner-section {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.login-screen .login-form .is-owner-section label, .login-screen .register-form .is-owner-section label, .register-screen .login-form .is-owner-section label, .register-screen .register-form .is-owner-section label {
-  text-transform: uppercase;
-}
-.login-screen .login-form .is-owner-section input[type=checkbox], .login-screen .register-form .is-owner-section input[type=checkbox], .register-screen .login-form .is-owner-section input[type=checkbox], .register-screen .register-form .is-owner-section input[type=checkbox] {
-  margin-left: 5px;
-}
 .login-screen .login-form a, .login-screen .register-form a, .register-screen .login-form a, .register-screen .register-form a {
   margin-top: 60px;
   text-align: center;
@@ -1105,5 +1094,7 @@ a {
 .restricted-screen {
   border: 4px solid rgba(225, 201, 151, 0.7);
   box-shadow: inset 0 0 10px 2px #E1C997;
+}
+.restricted-screen:not(.about-screen) {
   padding: 15px;
 }/*# sourceMappingURL=main.css.map */

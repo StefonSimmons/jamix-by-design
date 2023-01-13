@@ -13,7 +13,13 @@ export default function Login({ login, setUser }) {
         e.preventDefault()
         const res = await login(userCred)
         setUser(res)
-        navigate('/jamix-admin/accounts')
+        if(res.isOwner){
+            navigate('/jamix-admin/accounts')
+        }else if (res.isAdmin){
+            navigate('/jamix-admin/home')
+        }else{
+            navigate('/')
+        }
     }
 
     const handleChange = (e) => {
