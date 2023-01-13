@@ -39,7 +39,6 @@ export default function Home({restricted, user}) {
       }
     })
     setAirtableData(data.records)
-    return data.records
   }
 
   const deleteRecord = async (recordID) => {
@@ -90,41 +89,39 @@ export default function Home({restricted, user}) {
   }
 
   return (
-    <>
-      <div className={`home-screen ${restricted && "restricted-screen"}`}>
-        <section>
-          { (restricted && edit) ? 
-            <>
-              <input type="text" name="header_1" onChange={(e) => handleChange(e)} value={homeData?.fields?.header_1}/>
-              <input type="text" name="header_2" onChange={(e) => handleChange(e)} value={homeData?.fields?.header_2}/>
-            </>
-            :
-            <>
-              <h1>{airtableData[0]?.fields.header_1}</h1>
-              <h1 className="shifted-header-home">{airtableData[0]?.fields?.header_2}</h1>
-            </>
-          }
-        </section>
-        <BigButton text="Browse our Services" screen="services"/>
-        { (restricted && edit) ?
-          <input type="text" name="sub_header" onChange={(e) => handleChange(e)} value={homeData?.fields?.sub_header} />
-          :
-          <p className="subheader-home">{airtableData[0]?.fields.sub_header}</p>
-        }
-        {restricted && <button onClick={() => setEdit(prev => !prev)}>{edit ? "cancel" : "edit"}</button>}
-        {edit && <button onClick={handleSubmit}>Save</button>}
-        <div>
-          <img src={airtableData[0]?.fields?.home_img[0].url} alt="floral center piece"/>
-        </div>
-        { restricted &&
+    <div className={`home-screen ${restricted && "restricted-screen"}`}>
+      <section>
+        { (restricted && edit) ? 
           <>
-            <iframe className="airtable-embed" src="https://airtable.com/embed/shrqgKj7juCAXE8kO?backgroundColor=red" frameBorder="0" width="100%" height="500px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
-            <div className="get-pic-container">
-              <button className="big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Switch with New Photo</button>
-            </div>
+            <input className="header-home-input" type="text" name="header_1" onChange={(e) => handleChange(e)} value={homeData?.fields?.header_1}/>
+            <input className="header-home-input" type="text" name="header_2" onChange={(e) => handleChange(e)} value={homeData?.fields?.header_2}/>
+          </>
+          :
+          <>
+            <h1>{airtableData[0]?.fields.header_1}</h1>
+            <h1 className="shifted-header-home">{airtableData[0]?.fields?.header_2}</h1>
           </>
         }
+      </section>
+      {!edit && <BigButton text="Browse our Services" screen="services"/>}
+      { (restricted && edit) ?
+        <input className="subheader-home-input" type="text" name="sub_header" onChange={(e) => handleChange(e)} value={homeData?.fields?.sub_header} />
+        :
+        <p className="subheader-home">{airtableData[0]?.fields.sub_header}</p>
+      }
+      {restricted && <button className="edit-cancel-btn" onClick={() => setEdit(prev => !prev)}>{edit ? "cancel" : "edit"}</button>}
+      {edit && <button className="save-btn" onClick={handleSubmit}>Save</button>}
+      <div>
+        <img src={airtableData[0]?.fields?.home_img[0].url} alt="floral center piece"/>
       </div>
-    </>
-      )
+      { restricted &&
+        <>
+          <iframe className="airtable-embed" src="https://airtable.com/embed/shrqgKj7juCAXE8kO?backgroundColor=red" frameBorder="0" width="100%" height="500px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
+          <div className="get-pic-container">
+            <button className="big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Switch with New Photo</button>
+          </div>
+        </>
+      }
+    </div>
+  )
 }
