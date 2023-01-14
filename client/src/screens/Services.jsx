@@ -1,10 +1,49 @@
+import { useState } from "react"
+import { useEffect } from "react"
 import { Fragment } from "react"
 import Service from "../components/Service"
 import { services } from "../import-info/services"
+import { atAPI, config } from "../services/apiConfig"
 
 export default function Services({children, restricted, user}) {
 
+  const [edit, setEdit] = useState(false)
+  const [servicesData, setServicesData] = useState({})
+  const [airtableServices, setairtableServices] = useState({})
+
+  const [refresh, setRefresh] = useState(false)
+
+  useEffect(() => {
+    const getAirtableServices = async () => {
+      const {data} = await atAPI.get('/services/', config)
+      // console.log(data.records[0])
+      setServicesData({
+        fields: {
+          description: data.records[0]?.fields?.description
+        }
+      })
+      setairtableServices(data.records[0])
+    }
+    getAirtableServices()
+  }, [refresh])
   
+
+  const handleChange = (e) => {
+    const {value} = e.target
+    setServicesData({
+      fields: {
+        description: value
+      }
+    })
+  }
+
+  const handleSubmit = async () => {
+    const {status} = await atAPI.patch(`/services/${airtableServices.id}`, servicesData,config)
+    if(status === 200){
+      setRefresh(prev => !prev)
+      setEdit(false)
+    }
+  }
 
   if(!user?.isAdmin && !user?.isOwner && restricted){
     return (
@@ -23,9 +62,15 @@ export default function Services({children, restricted, user}) {
           </Fragment>
         ))}
       </section>
-      <p className="services-about">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has Engagement (surpises), Bridal Shower ot only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more  Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
+      { !edit ?
+        <p className="services-about">
+        {airtableServices?.fields?.description}
+        </p>
+        :
+        <textarea name="" id="" cols="30" rows="10" value={servicesData.fields.description} onChange={(e) => handleChange(e)}></textarea>
+      }
+      {restricted && <button className="edit-cancel-btn" onClick={() => setEdit(prev => !prev)}>{edit ? "cancel": "edit"}</button>}
+      {edit && <button className="save-btn" onClick={handleSubmit}>Submit</button>}
       <h2>Packages</h2>
       {children}
     </div>

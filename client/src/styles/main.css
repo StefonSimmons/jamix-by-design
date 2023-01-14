@@ -118,6 +118,26 @@
   color: rgba(0, 0, 0, 0.3);
 }
 
+.edit-cancel-btn {
+  width: 75px;
+  height: 50px;
+  margin: 0 auto;
+  transition: all 0.25s ease-in;
+}
+.edit-cancel-btn:hover {
+  background-color: rgba(225, 201, 151, 0.7);
+}
+
+.save-btn {
+  width: 100px;
+  height: 50px;
+  transition: all 0.25s ease-in;
+  margin: 0 auto;
+}
+.save-btn:hover {
+  background-color: green;
+}
+
 .hamburger-menu-toggler {
   cursor: pointer;
   display: none;
@@ -338,22 +358,6 @@ footer {
   height: 50px;
   padding: 0 15px;
   font-size: 24px;
-}
-.home-screen.restricted-screen .edit-cancel-btn {
-  width: 75px;
-  height: 50px;
-  transition: all 0.25s ease-in;
-}
-.home-screen.restricted-screen .edit-cancel-btn:hover {
-  background-color: rgba(225, 201, 151, 0.7);
-}
-.home-screen.restricted-screen .save-btn {
-  width: 100px;
-  height: 50px;
-  transition: all 0.25s ease-in;
-}
-.home-screen.restricted-screen .save-btn:hover {
-  background-color: green;
 }
 @media (max-width: 992px) {
   .home-screen {
@@ -923,6 +927,9 @@ footer {
   .services-screen .packages .package-card .package-description-container .package-price {
     font-size: 18px;
   }
+}
+.services-screen .packages .package-card .package-description-container button {
+  margin-right: 15px;
 }
 
 .gallery-screen {
