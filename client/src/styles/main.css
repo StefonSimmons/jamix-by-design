@@ -1032,8 +1032,8 @@ footer {
   height: 468px;
   width: 442px;
   background-repeat: no-repeat;
+  background-size: contain;
   background-position: 50% 50%;
-  background-size: cover;
   cursor: pointer;
 }
 @media (max-width: 576px) {
