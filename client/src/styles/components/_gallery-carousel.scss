@@ -1,0 +1,58 @@
+.gallery-carousel{
+  @include fade-in-animation;
+  background-color: rgba(0, 0, 0, 0.3);  
+  backdrop-filter: blur(5px);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .close{
+    font-size: $l-font-size;
+    font-weight: 400;
+    position: relative;
+    left: 72%;
+    color: $gold;
+    cursor: pointer;
+    transition: color .15s ease-in-out;
+    @media(max-width: $xs-screen){
+      left: 85%;
+    }
+
+    &:hover{
+      color: black;
+    }
+    
+  }
+
+  img{
+    max-width: 75vw;
+    max-height: 80vh;
+    margin: 0 auto;
+    // @media(max-width: $m-screen){
+    //   height: 351px;
+    //   max-width: 540px;
+    // }
+    // @media(max-width: $s-screen){
+    //   height: 234px;
+    //   max-width: 350px;
+    // }
+
+  }
+}
+
+.carousel-control-next, .carousel-control-prev{
+  transition: all .25s ease-in;
+  width: 100px;
+  @media (max-width: $m-screen) {
+    width: 50px;
+  }
+  @media (max-width: $s-screen) {
+    width: 25px;
+  }
+  &:hover{
+    background-color: rgb(12, 12, 6);
+  }
+}

@@ -1,0 +1,59 @@
+.login-screen, .register-screen{
+    height: 768px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-form, .register-form{
+        background: $secure-grey;
+        border: $secure-grey solid 1px;
+        border-radius: 15px;
+        width: 665px;
+        height: 490px;
+        display: flex;
+        flex-direction: column;
+        padding: 60px 30px;
+
+        input[type=text], input[type=password]{
+            border: none;
+            border-bottom: #B3B3B3 solid 1px;
+            background: $secure-grey;
+            font-size: $s-font-size;
+            height: 40px;
+            margin-bottom: 30px;
+
+            &::placeholder{
+                text-transform: uppercase;
+            }
+
+            &.unauthorized{
+                box-shadow: 0 0 2px 2px red;
+            }
+        }
+        p{
+            display: none;
+            &.unauthorized{
+                display: block;
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 0;
+                color: red;
+            }
+        }
+        a{
+            margin-top: 60px;
+            text-align: center;
+        } 
+
+        .loader{
+            border: solid grey 6px;
+            border-top: solid rgba(0, 0, 0, 0.525) 6px;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto;
+            border-radius: 50%;
+            @include spin-animation
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.big-btn{
+  min-height: 90px;
+  width: 350px;
+  border-radius: 15px;
+  border: 2px black solid;
+  font-family: $primary-font;
+  font-size: $l-font-size;
+  color: black;
+  background: $gold;
+  transition: all .3s ease-in-out;
+  box-shadow: 5px 5px 15px 0px black;
+
+  &:hover{
+    background-color: rgba(0, 0, 0,.8);
+    background-color: $goldish;
+    border: 2px rgba(0, 0, 0, 0) solid;
+    color: rgba(0, 0, 0, 0.9);
+    box-shadow: 5px 5px 5px 0px black;
+  }
+
+  @media(max-width: $s-screen){
+    font-size: $l-font-size;
+  }
+  @media (max-width: $xs-screen) {
+    border-radius: 0px;
+  }
+}
+
+.big-secure-btn {
+  background: $gold;
+  border-radius: 45px;
+  border: $gold solid 1px;
+  font-size: $l-font-size;
+  height: 90px;
+  margin-top: 15px;
+  padding: 0 30px;
+  cursor: pointer;
+  &:hover{
+    background: $goldish;
+    border: $goldish solid 1px
+  }
+  &:disabled{
+    background: $goldish;
+    border: $goldish solid 1px;
+    color: rgba(0, 0, 0, .3);
+  }
+}
+
+.edit-cancel-btn{
+  width: 75px;
+  height: 50px;
+  margin: 0 auto;
+  border: black solid 1px;
+  transition: all .25s ease-in;
+  &.edit{
+    background-color: rgb(88, 139, 88);
+    color: white;
+  }
+  &.cancel{
+    background-color: $goldish;
+    color: black;
+    &.services{
+      margin: 15px auto;
+    }
+  }
+  &:hover{
+    background-color: rgb(57, 57, 36);
+    color: white;
+  }
+
+}
+.save-btn{
+  width: 100px;
+  height: 50px;
+  transition: all .25s ease-in;
+  margin: 0 auto;
+  background-color: $goldish;
+  box-shadow: 0px 0px 0px 0px black;
+  &:hover{
+    background-color: $gold;
+    border: 2px rgba(0, 0, 0, 0) solid;
+    color: rgba(0, 0, 0, 0.9);
+    box-shadow: 5px 5px 5px 0px black;
+  }
+}

@@ -1,0 +1,65 @@
+.gallery-screen {
+  @include fade-in-animation;
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 115px 0 75px 0;
+
+    .photo {
+      position: relative;
+      margin: 15px;
+      height: 468px;
+      width: 442px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%;
+      // background-size: cover;
+      cursor: pointer;
+      @media(max-width: $s-screen){
+        max-width: 340px;
+        margin: 15px 0;
+      }
+
+      .overlay-delete{
+        button{
+          display: none;
+        }
+      }
+      .overlay-delete.hovered{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(225, 201, 151, .7);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+          display: block;
+          width: 200px;
+          height: 90px;
+          transform: rotate(-7deg);
+          border: black 3px solid;
+          background-color: rgb(143, 19, 19);
+          color: white;
+          border-radius: 3px;
+          font-size: $l-font-size;
+          &:hover{
+            background-color: rgb(149, 59, 59);
+            border: rgba(0, 0, 0, .7) 3px solid;
+            color: rgb(44, 47, 47)
+          }
+        }
+      }
+    }
+  }
+  .get-pic-container{
+    display: flex;
+    justify-content: center;
+    .get-pics-btn{
+      margin-bottom: 15px;
+    }
+  }
+}
+
+

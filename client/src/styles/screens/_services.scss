@@ -1,0 +1,286 @@
+.services-screen {
+  @include fade-in-animation;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  margin: 115px 0 75px 0;
+  padding: 0 30px;
+  @media(min-width: 1401px) {
+    width: 1400px;
+    margin: 115px auto 75px auto;
+  }
+  @media(max-width: $xl-screen){
+    justify-content: center;
+  }
+
+  h1 {
+    @include fade-in-animation(2s);
+    font-size: $xxl-font-size;
+    letter-spacing: 2.5px;
+    text-align: center;
+    @media (max-width: $xl-screen) {
+      font-size: $xl-font-size;
+    }
+    @media (max-width: $l-screen) {
+      font-size: $l-font-size;
+    }
+    @media (max-width: $s-screen) {
+      text-align: left;
+    }
+  }
+  .services-section {
+    width: 100%;
+    margin: 80px 0;
+    display: flex;
+    justify-content: space-evenly;
+    @media (max-width: $m-screen){
+      flex-direction: column;
+      justify-content: center;
+      height: 450px;
+      margin: 0;
+    }
+
+    // NESTED STYLES APPLIED TO EACH CARD
+    .service-card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: $m-screen) {
+        margin: 15px 0;
+      }
+
+      .service-card-color {
+        width: 150px;
+        height: 82px;
+        background-color: $goldish;
+        border: black solid 2px;
+        box-sizing: border-box;
+        transform: rotate(-23.6deg);
+
+        @media (max-width: $m-screen) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100px;
+          transform: rotate(0deg);
+        }
+        .service-card {
+          width: 147px;
+          height: 82px;
+          box-sizing: border-box;
+          background-color: white;
+          border: black solid 2px;
+          transform: rotate(13.73deg);
+
+          @media (max-width: $m-screen) {
+            transform: rotate(0deg);
+            width: 95%;
+          }
+          .service-card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(10deg);
+            box-sizing: border-box;
+            height: 100%;
+            @media (max-width: $m-screen) {
+              transform: rotate(0deg);
+            }
+            h2 {
+              font-size: $m-font-size;
+              font-weight: 700;
+              letter-spacing: 2px;
+              margin: 0;
+            }
+            ul{
+              margin: 0;
+              li {
+                font-size: $m-font-size;
+                list-style-type: disc;
+                margin: 15px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .packages-live-btn{
+    margin: 0 auto 60px auto;
+  }
+
+  .services-about {
+    font-size: $m-font-size;
+    margin-bottom: 75px;
+    @media(max-width: $s-screen){
+      font-size: $s-font-size;
+    }
+  }
+
+  .text-area-services{
+    padding: 15px;
+    font-size: 24px;
+  }
+
+  h2{
+    font-size: $xl-font-size;
+  }
+
+  .packages {
+    padding: 0;
+    .package-card{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: solid black 2px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      padding: 15px;
+      margin: 60px 0;
+      cursor: pointer;
+      transition: all .25s ease-in;
+      &:hover, &.open{
+        background-color: rgba(0, 0, 0,.8);
+        background-color: $goldish;
+        box-shadow: 5px 5px 5px 0px black;
+      }
+      &.preview{
+        box-shadow: inset 0px 0px 15px 5px rgb(11, 166, 11);
+      }
+      @media(max-width: $m-screen){
+        margin: 15px 0;
+      }
+      input[type=text], textarea{
+        margin-bottom: 15px;
+        height: 50px;
+        padding: 15px;
+        font-size: 24px;
+      }
+      textarea{
+        height: 200px;
+        font-size: 24px;
+      }
+      .cancel-btn{
+        background-color: $goldish;
+        color: black;
+        border: black solid 1px;
+        transition: all .25s ease-in;
+        height: 50px;
+        width: 80%;
+        margin: 0 auto 15px auto;
+        &:hover{
+          background-color: rgb(57, 57, 36);
+          color: white;
+        }
+      }
+      .preview-btn{
+        background-color: rgb(88, 139, 88);
+        color: white;
+        transition: all .25s ease-in;
+        height: 50px;
+        width: 80%;
+        margin: 0 auto 15px auto;
+        &:hover{
+          background-color: green;
+          color: white;
+        }
+      }
+      
+      .package-header{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 3fr 4fr auto;
+        min-height: 94px;
+        height: auto;
+        padding-right: 45px;
+        
+        @media(max-width: $m-screen){
+          grid-template-columns: 1fr 1fr auto;
+          height: auto;
+          padding-right: 15px;
+        }
+        @media(max-width: $s-screen){
+          grid-template-columns: 2fr auto;
+        }
+        h3, p{
+          margin-bottom: 0;
+        }
+        h3{
+          font-size: $l-font-size;
+          @media(max-width: $m-screen){
+            font-size: $m-font-size;
+          }
+        }
+        p{
+          font-size: $m-font-size;
+          @media(max-width: $m-screen){
+            font-size: $s-font-size;
+          }
+          @media(max-width: $s-screen){
+            display: none
+          }
+        };
+        .arrow{
+          border-bottom: 3px solid black;
+          border-left: 3px solid black;
+          transform: rotate(-45deg);
+          height: 36px;
+          width: 36px;
+          position: relative;
+          top: -5px;
+          &.open{
+            transform: rotate(135deg);
+            top: 15px;
+            @media(max-width: $m-screen){
+              top: 5px;
+            }
+          }
+          @media(max-width: $m-screen){
+            height: 18px;
+            width: 18px;
+          }
+        }
+      }
+      .package-description-container{
+        &.close{
+         display: none; 
+        }
+        .edit-btn, .delete-btn{  
+          color: white;
+          transition: all .25s ease-in;
+          &:hover{
+            background-color: $goldish;
+            color: black;
+          }
+        }
+        .edit-btn{
+          background-color: rgb(88, 139, 88);
+        }
+        .delete-btn{
+          background-color: rgb(139, 88, 88);
+        }
+        .package-description {
+          font-size: $m-font-size;
+          @media(max-width: $m-screen){
+            font-size: $s-font-size;
+            margin-top: 5px;
+          }
+        }
+        .package-price {
+          font-weight: 700;
+          font-size: $m-font-size;
+          @media(max-width: $m-screen){
+            font-size: $s-font-size;
+          }
+        }
+        button{
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
