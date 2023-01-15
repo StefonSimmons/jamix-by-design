@@ -88,6 +88,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
           )
         })}
       </section>
+      {restricted && <p className="admin-info">To add more images to this page, use the form below to upload a new image to the database. *WARNING* The new image will be live at this point. Refresh the page to see the new image.</p>}
       { restricted &&
         <div className='get-pic-container'>
           <button className="get-pics-btn big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Refresh Page</button>
