@@ -832,6 +832,10 @@ footer {
     font-size: 18px;
   }
 }
+.services-screen .text-area-services {
+  padding: 15px;
+  font-size: 24px;
+}
 .services-screen h2 {
   font-size: 52px;
 }

@@ -62,15 +62,18 @@ export default function Services({children, restricted, user}) {
           </Fragment>
         ))}
       </section>
+      {restricted && <p>To update the text here, click the "Edit" button below. Once you are happy with the text, click "Submit" to save the changes for public viewing.</p>}
       { !edit ?
         <p className="services-about">
         {airtableServices?.fields?.description}
         </p>
         :
-        <textarea name="" id="" cols="30" rows="10" value={servicesData.fields.description} onChange={(e) => handleChange(e)}></textarea>
+        <>
+        {restricted && <textarea className="text-area-services" cols="30" rows="10" value={servicesData.fields.description} onChange={(e) => handleChange(e)}></textarea>}
+        </>
       }
       {restricted && <button className={`edit-cancel-btn ${edit ? 'cancel': 'edit'} services`} onClick={() => setEdit(prev => !prev)}>{edit ? "Cancel": "Edit"}</button>}
-      {edit && <button className="save-btn" onClick={handleSubmit}>Submit</button>}
+      {edit && restricted && <button className="save-btn" onClick={handleSubmit}>Submit</button>}
       <h2>Packages</h2>
       {children}
     </div>
