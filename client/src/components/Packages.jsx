@@ -118,7 +118,7 @@ export default function Packages({restricted}) {
                     </div>
                 )})}
                 </ul>
-                <button className="packages-live-btn" onClick={handleSubmit}>Go Live</button>
+                <button className="big-btn packages-live-btn" onClick={handleSubmit}>Go Live</button>
                 <iframe className="airtable-embed" src="https://airtable.com/embed/shr9jRgZMKBIHOsyl" frameBorder="0" width="100%" height="700px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
             </>
             :
