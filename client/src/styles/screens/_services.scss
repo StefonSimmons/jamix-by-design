@@ -194,12 +194,13 @@
         display: grid;
         align-items: center;
         grid-template-columns: 3fr 4fr auto;
-        height: 94px;
+        min-height: 94px;
+        height: auto;
         padding-right: 45px;
         
         @media(max-width: $m-screen){
           grid-template-columns: 1fr 1fr auto;
-          height: 45px;
+          height: auto;
           padding-right: 15px;
         }
         @media(max-width: $s-screen){
