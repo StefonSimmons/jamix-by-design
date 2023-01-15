@@ -131,15 +131,15 @@
   color: white;
 }
 .edit-cancel-btn.cancel {
-  background-color: rgb(139, 88, 88);
-  color: white;
+  background-color: rgba(225, 201, 151, 0.7);
+  color: black;
 }
 .edit-cancel-btn.cancel.services {
   margin: 15px auto;
 }
 .edit-cancel-btn:hover {
-  background-color: rgba(225, 201, 151, 0.7);
-  color: black;
+  background-color: rgb(57, 57, 36);
+  color: white;
 }
 
 .save-btn {
@@ -936,6 +936,20 @@ footer {
 .services-screen .packages .package-card .package-description-container.close {
   display: none;
 }
+.services-screen .packages .package-card .package-description-container .edit-btn, .services-screen .packages .package-card .package-description-container .delete-btn {
+  color: white;
+  transition: all 0.25s ease-in;
+}
+.services-screen .packages .package-card .package-description-container .edit-btn:hover, .services-screen .packages .package-card .package-description-container .delete-btn:hover {
+  background-color: rgba(225, 201, 151, 0.7);
+  color: black;
+}
+.services-screen .packages .package-card .package-description-container .edit-btn {
+  background-color: rgb(88, 139, 88);
+}
+.services-screen .packages .package-card .package-description-container .delete-btn {
+  background-color: rgb(139, 88, 88);
+}
 .services-screen .packages .package-card .package-description-container .package-description {
   font-size: 24px;
 }
@@ -1197,4 +1211,10 @@ a {
 }
 .restricted-screen:not(.about-screen) {
   padding: 15px;
+}
+
+.admin-info {
+  color: grey;
+  margin: 0;
+  font-size: 16px;
 }/*# sourceMappingURL=main.css.map */

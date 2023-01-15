@@ -84,6 +84,7 @@ export default function Packages({restricted}) {
 
     return (
         <>
+            {restricted && <p className="admin-info">To update the packages below, expand the package and click the "Edit" button. Once you are happy with the text, click "Preview" to preview the changes. These changes are not live at this point. To submit/save the updates you have made so the public can view, click the "Submit" button.</p>}
             {restricted ?
             <>
                 <ul className="packages">
@@ -110,15 +111,15 @@ export default function Packages({restricted}) {
                             <div className={`package-description-container ${isOpen[service.fields.name] ? 'open' : 'close'}`}>
                                 <p className="package-description">{service.fields.description}</p>
                                 <p className="package-price">starting @ {service.fields.price}</p>
-                                <button onClick={(e) => handleEditID(e)} id={idx}>Edit</button>
-                                <button>Delete</button>
+                                <button className="edit-btn" onClick={(e) => handleEditID(e)} id={idx}>Edit</button>
+                                <button className="delete-btn">Delete</button>
                             </div>
                         </li>
                         }
                     </div>
                 )})}
                 </ul>
-                <button className="big-btn packages-live-btn" onClick={handleSubmit}>Go Live</button>
+                <button className="big-btn packages-live-btn" onClick={handleSubmit}>Submit</button>
                 <iframe className="airtable-embed" src="https://airtable.com/embed/shr9jRgZMKBIHOsyl" frameBorder="0" width="100%" height="700px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
             </>
             :

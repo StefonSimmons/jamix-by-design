@@ -62,7 +62,7 @@ export default function Services({children, restricted, user}) {
           </Fragment>
         ))}
       </section>
-      {restricted && <p>To update the text here, click the "Edit" button below. Once you are happy with the text, click "Submit" to save the changes for public viewing.</p>}
+      {restricted && <p className="admin-info">To update the text here, click the "Edit" button below. Once you are happy with the text, click "Submit" to save the changes for public viewing.</p>}
       { !edit ?
         <p className="services-about">
         {airtableServices?.fields?.description}

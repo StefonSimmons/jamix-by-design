@@ -213,6 +213,20 @@
         &.close{
          display: none; 
         }
+        .edit-btn, .delete-btn{  
+          color: white;
+          transition: all .25s ease-in;
+          &:hover{
+            background-color: $goldish;
+            color: black;
+          }
+        }
+        .edit-btn{
+          background-color: rgb(88, 139, 88);
+        }
+        .delete-btn{
+          background-color: rgb(139, 88, 88);
+        }
         .package-description {
           font-size: $m-font-size;
           @media(max-width: $m-screen){
