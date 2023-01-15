@@ -90,7 +90,7 @@ export default function Gallery({ setIndex, setGalleryModal, airtablePhotos, set
       </section>
       { restricted &&
         <div className='get-pic-container'>
-          <button className="get-pics-btn big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Get New Pics</button>
+          <button className="get-pics-btn big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Refresh Page</button>
         </div>
       }
       { restricted &&

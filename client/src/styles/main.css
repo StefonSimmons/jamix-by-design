@@ -106,6 +106,7 @@
   font-size: 36px;
   height: 90px;
   margin-top: 15px;
+  padding: 0 30px;
   cursor: pointer;
 }
 .big-secure-btn:hover {
@@ -122,10 +123,23 @@
   width: 75px;
   height: 50px;
   margin: 0 auto;
+  border: black solid 1px;
   transition: all 0.25s ease-in;
+}
+.edit-cancel-btn.edit {
+  background-color: rgb(88, 139, 88);
+  color: white;
+}
+.edit-cancel-btn.cancel {
+  background-color: rgb(139, 88, 88);
+  color: white;
+}
+.edit-cancel-btn.cancel.services {
+  margin: 15px auto;
 }
 .edit-cancel-btn:hover {
   background-color: rgba(225, 201, 151, 0.7);
+  color: black;
 }
 
 .save-btn {
@@ -133,9 +147,14 @@
   height: 50px;
   transition: all 0.25s ease-in;
   margin: 0 auto;
+  background-color: rgba(225, 201, 151, 0.7);
+  box-shadow: 0px 0px 0px 0px black;
 }
 .save-btn:hover {
-  background-color: green;
+  background-color: #E1C997;
+  border: 2px rgba(0, 0, 0, 0) solid;
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 5px 5px 0px black;
 }
 
 .hamburger-menu-toggler {

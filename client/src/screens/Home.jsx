@@ -109,17 +109,17 @@ export default function Home({restricted, user}) {
         :
         <p className="subheader-home">{airtableData[0]?.fields.sub_header}</p>
       }
-      {restricted && <button className="edit-cancel-btn" onClick={() => setEdit(prev => !prev)}>{edit ? "cancel" : "edit"}</button>}
+      {restricted && <button className={`edit-cancel-btn ${edit ? 'cancel': 'edit'}`} onClick={() => setEdit(prev => !prev)}>{edit ? "Cancel" : "Edit"}</button>}
       {edit && <button className="save-btn" onClick={handleSubmit}>Save</button>}
       <div>
         <img src={airtableData[0]?.fields?.home_img[0].url} alt="floral center piece"/>
       </div>
       { restricted &&
         <>
-          <iframe className="airtable-embed" src="https://airtable.com/embed/shrqgKj7juCAXE8kO?backgroundColor=red" frameBorder="0" width="100%" height="500px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
           <div className="get-pic-container">
-            <button className="big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Switch with New Photo</button>
+            <button className="big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Refresh Page</button>
           </div>
+          <iframe className="airtable-embed" src="https://airtable.com/embed/shrqgKj7juCAXE8kO" frameBorder="0" width="100%" height="500px" style={{background: "transparent", border: "1px solid #ccc"}} title="airtable"></iframe>
         </>
       }
     </div>

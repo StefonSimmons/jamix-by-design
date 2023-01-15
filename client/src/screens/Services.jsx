@@ -69,7 +69,7 @@ export default function Services({children, restricted, user}) {
         :
         <textarea name="" id="" cols="30" rows="10" value={servicesData.fields.description} onChange={(e) => handleChange(e)}></textarea>
       }
-      {restricted && <button className="edit-cancel-btn" onClick={() => setEdit(prev => !prev)}>{edit ? "cancel": "edit"}</button>}
+      {restricted && <button className={`edit-cancel-btn ${edit ? 'cancel': 'edit'} services`} onClick={() => setEdit(prev => !prev)}>{edit ? "Cancel": "Edit"}</button>}
       {edit && <button className="save-btn" onClick={handleSubmit}>Submit</button>}
       <h2>Packages</h2>
       {children}
