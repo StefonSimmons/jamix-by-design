@@ -154,6 +154,41 @@
       @media(max-width: $m-screen){
         margin: 15px 0;
       }
+      input[type=text], textarea{
+        margin-bottom: 15px;
+        height: 50px;
+        padding: 15px;
+        font-size: 24px;
+      }
+      textarea{
+        height: 200px;
+        font-size: 24px;
+      }
+      .cancel-btn{
+        background-color: $goldish;
+        color: black;
+        border: black solid 1px;
+        transition: all .25s ease-in;
+        height: 50px;
+        width: 80%;
+        margin: 0 auto 15px auto;
+        &:hover{
+          background-color: rgb(57, 57, 36);
+          color: white;
+        }
+      }
+      .preview-btn{
+        background-color: rgb(88, 139, 88);
+        color: white;
+        transition: all .25s ease-in;
+        height: 50px;
+        width: 80%;
+        margin: 0 auto 15px auto;
+        &:hover{
+          background-color: green;
+          color: white;
+        }
+      }
       
       .package-header{
         display: grid;

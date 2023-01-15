@@ -84,7 +84,7 @@ export default function Packages({restricted}) {
 
     return (
         <>
-            {restricted && <p className="admin-info">To update the packages below, expand the package and click the "Edit" button. Once you are happy with the text, click "Preview" to preview the changes. These changes are not live at this point. To submit/save the updates you have made so the public can view, click the "Submit" button.</p>}
+            {restricted && <p className="admin-info">To update the packages below, expand the package and click the "Edit" button. Once you are happy with the text, click "Preview" to preview the changes. The package card will have a green border indicating the preview state. These changes are not live/saved at this point. To submit/save the updates you have made so the public can view, click the "Submit" button.</p>}
             {restricted ?
             <>
                 <ul className="packages">
@@ -98,8 +98,8 @@ export default function Packages({restricted}) {
                             <input type="text" placeholder="Short Description" data-package-id={onePackage.id} name="sub_name" value={onePackage.fields.sub_name} onChange={(e) => handleUpdate(e)}/>
                             <input type="text" placeholder="Price" data-package-id={onePackage.id} name="price" value={onePackage.fields.price} onChange={(e) => handleUpdate(e)}/>
                             <textarea type="text" placeholder="Full Description" data-package-id={onePackage.id} name="description" value={onePackage.fields.description} rows="8" onChange={(e) => handleUpdate(e)}/>
-                            <button onClick={() => activateEditID(null)}>Cancel</button>
-                            <input type="submit" value="Preview" />
+                            <button class="cancel-btn" onClick={() => activateEditID(null)}>Cancel</button>
+                            <input class="preview-btn" type="submit" value="Preview" />
                         </form>
                         :
                         <li key={idx} className={`package-card ${isOpen[service.fields.name] ? 'open' : 'close'} ${previewIDs.includes(idx) ? 'preview': ''}`} onClick={() => togglePackageCard(service.fields.name)} >
