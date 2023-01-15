@@ -18,7 +18,7 @@ export default function GalleryCarousel({ index, setIndex, setGalleryModal, gall
               return (
                 <Carousel.Item key={idx}>
                   <img
-                    className="d-block"
+                    className="d-block img-fluid"
                     src={photo.url || photo}
                     alt={`slide ${idx + 1}`}
                   />

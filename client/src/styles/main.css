@@ -29,11 +29,11 @@
   }
 }
 .gallery-carousel .close {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 400;
   position: relative;
   left: 72%;
-  color: black;
+  color: #E1C997;
   cursor: pointer;
   transition: color 0.15s ease-in-out;
 }
@@ -43,30 +43,30 @@
   }
 }
 .gallery-carousel .close:hover {
-  color: #E1C997;
+  color: black;
 }
 .gallery-carousel img {
-  height: 468px;
+  max-width: 75vw;
+  max-height: 80vh;
   margin: 0 auto;
-}
-@media (max-width: 768px) {
-  .gallery-carousel img {
-    height: 351px;
-    max-width: 540px;
-  }
-}
-@media (max-width: 576px) {
-  .gallery-carousel img {
-    height: 234px;
-    max-width: 350px;
-  }
 }
 
 .carousel-control-next, .carousel-control-prev {
   transition: all 0.25s ease-in;
+  width: 100px;
+}
+@media (max-width: 768px) {
+  .carousel-control-next, .carousel-control-prev {
+    width: 50px;
+  }
+}
+@media (max-width: 576px) {
+  .carousel-control-next, .carousel-control-prev {
+    width: 25px;
+  }
 }
 .carousel-control-next:hover, .carousel-control-prev:hover {
-  background-color: rgba(12, 12, 6, 0.1);
+  background-color: rgb(12, 12, 6);
 }
 
 .big-btn {

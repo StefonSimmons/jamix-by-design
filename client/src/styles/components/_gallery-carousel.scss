@@ -10,11 +10,11 @@
   justify-content: center;
 
   .close{
-    font-size: $m-font-size;
+    font-size: $l-font-size;
     font-weight: 400;
     position: relative;
     left: 72%;
-    color: black;
+    color: $gold;
     cursor: pointer;
     transition: color .15s ease-in-out;
     @media(max-width: $xs-screen){
@@ -22,29 +22,37 @@
     }
 
     &:hover{
-      color: $gold;
+      color: black;
     }
     
   }
 
   img{
-    height: 468px;
+    max-width: 75vw;
+    max-height: 80vh;
     margin: 0 auto;
-    @media(max-width: $m-screen){
-      height: 351px;
-      max-width: 540px;
-    }
-    @media(max-width: $s-screen){
-      height: 234px;
-      max-width: 350px;
-    }
+    // @media(max-width: $m-screen){
+    //   height: 351px;
+    //   max-width: 540px;
+    // }
+    // @media(max-width: $s-screen){
+    //   height: 234px;
+    //   max-width: 350px;
+    // }
 
   }
 }
 
 .carousel-control-next, .carousel-control-prev{
   transition: all .25s ease-in;
+  width: 100px;
+  @media (max-width: $m-screen) {
+    width: 50px;
+  }
+  @media (max-width: $s-screen) {
+    width: 25px;
+  }
   &:hover{
-    background-color: rgba(12, 12, 6, 0.1);
+    background-color: rgb(12, 12, 6);
   }
 }
