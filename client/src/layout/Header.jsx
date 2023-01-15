@@ -12,7 +12,7 @@ export default function Header({setMenuModal, user, logout}) {
           <div className="admin-greeting">
               <p ><span>Hi,</span>{user.email.split('@')[0]}</p>
               <Link to="/jamix-admin/home">home</Link>
-              <Link to="/jamix-admin/about">about</Link>
+              {/* <Link to="/jamix-admin/about">about</Link> */}
               <Link to="/jamix-admin/gallery">gallery</Link>
               <Link to="/jamix-admin/services">services</Link>
               {user.isOwner && <Link to="/jamix-admin/accounts">accounts</Link>}
