@@ -90,6 +90,7 @@ export default function Home({restricted, user}) {
 
   return (
     <div className={`home-screen ${restricted && "restricted-screen"}`}>
+      {restricted && <p className="admin-info">To update the headers below, click the "Edit" button. Once you are happy with the text, click "Submit" to save the changes for public viewing.</p>}
       <section>
         { (restricted && edit) ? 
           <>
@@ -110,12 +111,13 @@ export default function Home({restricted, user}) {
         <p className="subheader-home">{airtableData[0]?.fields.sub_header}</p>
       }
       {restricted && <button className={`edit-cancel-btn ${edit ? 'cancel': 'edit'}`} onClick={() => setEdit(prev => !prev)}>{edit ? "Cancel" : "Edit"}</button>}
-      {edit && <button className="save-btn" onClick={handleSubmit}>Save</button>}
+      {(edit && restricted) && <button className="save-btn" onClick={handleSubmit}>Save</button>}
       <div>
         <img src={airtableData[0]?.fields?.home_img[0].url} alt="floral center piece"/>
       </div>
       { restricted &&
         <>
+          {restricted && <p className="admin-info">To update the image above, use the form below to upload a new image to the database. *WARNING* The new image will be live at this point. Refresh the page to see the new image.</p>}
           <div className="get-pic-container">
             <button className="big-secure-btn" onClick={() => setRefresh(prev => !prev)}>Refresh Page</button>
           </div>
